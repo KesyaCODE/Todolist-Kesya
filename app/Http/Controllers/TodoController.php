@@ -237,7 +237,7 @@ class TodoController extends Controller
                 ->where('keterangan', 'Selesai')
                 ->get();
         return view('admin.penugasanSelesai', [
-            'penugasanSelesai' => $penugasanSelesai
+            'penugasanSelesai' => $penugasanSelesai,
         ]);
     }
 

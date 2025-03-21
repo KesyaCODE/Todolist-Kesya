@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Tugas / Todo</title>
+
+    <link rel="stylesheet" href="asset/bootstrap.css" type="text/css">
 </head>
 <body>
     <p align="right">
         <a href="/">Keluar</a>
     </p>
     <center>
-        Daftar Tugas Tersedia
+        TUGAS TERSEDIA
     </center>
     <center>
-        [ <a href="/admin/todo/dataPenugasan">Beranda Tugas</a> ] | 
-        [ <a href="/admin/todo/penugasanSelesai">Tugas Selesai</a> ] | 
-        [ <a href="/admin/todo/penugasanDitolak">Tugas Ditolak</a> ] | 
-        [ <a href="/admin/todo/rincianPenugasan">Rincian Penugasan</a> ]
+        [ <a href="/todo/admin">Beranda</a> ] |
+        [ <a href="/admin/todo/dataPenugasan">ToDo</a> ] | 
+        [ <a href="/admin/todo/rincianPenugasan">Rincian ToDo</a> ]
     </center>
     <hr>
     <center>
-        [ <a href="/admin/todo/penugasanBaru">Tugas Baru</a> ]
+        [ <a href="/admin/todo/penugasanBaru">ToDo Baru</a> ]
     </center>
     @if (count($dataTodo)<0)
         <center>
             Tidak ada todo!
         </center>
     @else
-        <table align="center">
-            <tr>
+        <table align="center" class="table-primary">
+            <tr class="table-primary">
                 <td>No.</td>
                 <td>Penugasan</td>
                 <td>Waktu Mulai</td>
