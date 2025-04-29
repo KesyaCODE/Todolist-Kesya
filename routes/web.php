@@ -5,7 +5,7 @@ use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('halamanUtama');
+    return view('halamanUtama'); // halaman pertama kali diakses
 });
 
 //route admin user
