@@ -7,8 +7,16 @@ use Illuminate\Support\Facades\DB;
 
 class PenggunaController extends Controller
 {
-    public function login() {
-        return view('todo.beranda');
+    public function login($id) {
+        // ambil data pegawai dari tb_pegawai berdasarkan id
+        $pegawai = DB::table('tb_pegawai')
+                ->where('id', $id)
+                ->first();
+
+                // kirim data pegawai ke view dengan parameter detailPegawai ( id, nama, jabatan )
+        return view('todo.beranda', [
+            'detailPegawai' => $pegawai
+        ]);
     }
 
     // method admin

@@ -11,7 +11,7 @@
     <div class="container">
         <!-- rencana buat dalam bentuk session atau log out betulan -->
         <p align="right"><a href="/">Keluar</a></p>
-        Selamat Datang, {{ $detailPegawai->nama }}!
+        Selamat Datang, <b>{{ $detailPegawai->nama }}!</b>
         <hr>
 
         <div class="card-group">

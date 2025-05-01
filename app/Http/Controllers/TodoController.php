@@ -17,7 +17,8 @@ class TodoController extends Controller
                 ->get();
         return view('todo.mytodo', [
             //bawa data dari $todo
-            'daftarTugas' => $todo
+            'daftarTugas' => $todo,
+            'idPengguna' => $id // id pengguna yang login 
         ]);
     }
 

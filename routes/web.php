@@ -24,7 +24,7 @@ Route::get('/admin/todo/penugasanDitolak', [TodoController::class, 'penugasanDit
 Route::get('/admin/todo/rincianPenugasan', [TodoController::class, 'rincianPenugasan']);
 
 //route general user
-Route::get('/todo/user/login', [PenggunaController::class, 'login']);
+Route::get('/todo/user/login/{id}', [PenggunaController::class, 'login']);
 
 //route todo
 Route::get('/todo/mytodo/{id}', [TodoController::class, 'mytodo']);
