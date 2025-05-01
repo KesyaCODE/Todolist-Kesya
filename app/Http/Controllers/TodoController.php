@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
-    public function mytodo() {
+    public function mytodo($id) {
         //ambil semua data
         // $todo = DB::table('tb_todo')->get();
 
         $todo = DB::table('tb_todo')
                 ->where('keterangan', 'Ditugaskan')
+                ->where('tugas_untuk', $id)
                 ->get();
         return view('todo.mytodo', [
             //bawa data dari $todo

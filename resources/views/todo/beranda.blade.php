@@ -24,7 +24,7 @@
             </p>
             </div>
             <div class="card-footer">
-            <small class="text-body-secondary"><a href="/todo/mytodo" class="card-link">Lihat Tugas Saya!</a></small>
+            <small class="text-body-secondary"><a href="/todo/mytodo/{{ $detailPegawai->id }}" class="card-link">Lihat Tugas Saya!</a></small>
             </div>
         </div>
         <div class="card">
