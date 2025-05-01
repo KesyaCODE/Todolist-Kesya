@@ -21,7 +21,7 @@
             <div class="card-header">
                 <p align="right">
                     <!-- rencana membuka halaman auth admin -->
-                    <a href="/todo/admin">Admin</a>
+                    Admin ? <a href="/todo/admin">Klik Disini</a>
                 </p>
             </div>
             <div class="card-body">
@@ -30,6 +30,29 @@
                     <p class="card-text">Build with Laravel and MySQL Database</p>
                     <!-- rencana membuka halaman auth untuk selain admin / variasi lain -->
                     <a href="/todo/user/login">Masuk</a>
+                    <hr>
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @elseif(session('kosong'))
+                        <div class="alert alert-info">
+                            {{ session('kosong') }}
+                        </div>
+                    @endif
+
+                    <form action="/auth/pegawai/prosesLogin" method="get">
+                        @csrf
+                        <div class="mb-3">
+                        <input type="text" name="userName" class="form-control" id="exampleFormControlInput1" placeholder="Email atau nama pengguna">
+                        </div>
+                        <div class="mb-3">
+                        <input type="password" name="kataSandi" class="form-control" id="exampleFormControlInput1" placeholder="Kata Sandi">
+                        </div>
+                        <div class="mb-3">
+                        <input type="submit" class="btn btn-primary">
+                        </div>
+                    </form>
                 </center>
             </div>
         </div>

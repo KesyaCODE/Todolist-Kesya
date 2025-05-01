@@ -8,6 +8,9 @@ Route::get('/', function () {
     return view('halamanUtama'); // halaman pertama kali diakses
 });
 
+//auth pengguna
+Route::get('/auth/pegawai/prosesLogin', [PenggunaController::class, 'prosesLogin']);
+
 //route admin user
 Route::get('/todo/admin', [PenggunaController::class, 'adminLogin']);
 Route::get('/admin/todo/dataPenugasan', [TodoController::class, 'dataPenugasan']);

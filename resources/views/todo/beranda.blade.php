@@ -11,31 +11,47 @@
     <div class="container">
         <!-- rencana buat dalam bentuk session atau log out betulan -->
         <p align="right"><a href="/">Keluar</a></p>
-        Selamat Datang!
+        Selamat Datang, {{ $detailPegawai->nama }}!
         <hr>
-        <table align="center" border="1" class="table table-striped">
-            <tr>
-                <td colspan="3" align="center">MyTodo Today</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="card w-50">
-                        <div class="card-body">
-                            <h5 class="card-title">Tugas Saya</h5>
-                            <p class="card-text">Cek penugasan yang diberikan oleh pejabat terkait untukmu</p>
 
-                            <!-- melihat tugas yang diberikan atasan -->
-                            <a href="/todo/mytodo" class="card-link">Lihat Tugas!</a>
-                        </div>
-                    </div>
-                </td>
-                <td align="center">
-
-                <!-- melihat tugas yang sudah di selesaikan -->
-                    <a href="/todo/mytodo/selesai">Tugas Selesai</a></td>
-                <td align="left"><a href="/todo/mytodo/ditolak">Tugas Ditolak</a></td>
-            </tr>
-        </table>
+        <div class="card-group">
+        <div class="card">
+            <img src="/img/todo.png" class="card-img-top" width="100" height="300" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Daftar Tugas</h5>
+            <p class="card-text">
+                Daftar penugasan yang diberikan kepada anda. Silahkan pilih tugas yang ingin dikerjakan.
+            </p>
+            </div>
+            <div class="card-footer">
+            <small class="text-body-secondary"><a href="/todo/mytodo" class="card-link">Lihat Tugas Saya!</a></small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/img/todo_selesai.png" class="card-img-top"  width="100" height="300" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Tugas Diselesaikan</h5>
+            <p class="card-text">
+                Tugas yang sudah anda selesaikan. Silahkan pilih tugas yang ingin dilihat hasilnya.
+            </p>
+            </div>
+            <div class="card-footer">
+            <small class="text-body-secondary"><a href="/todo/mytodo/selesai">Tugas Selesai</a></td></small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/img/todo_gagal.png" class="card-img-top"  width="100" height="300" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Tugas Ditolak</h5>
+            <p class="card-text">
+                Tugas yang sudah anda kerjakan tetapi ditolak oleh atasan atau anda menolak sendiri. Silahkan pilih tugas yang ingin dilihat hasilnya.
+            </p>
+            </div>
+            <div class="card-footer">
+            <small class="text-body-secondary"><a href="/todo/mytodo/ditolak">Penolakan Saya</a></small>
+            </div>
+        </div>
+</div>
     </div>
 </body>
 </html>
