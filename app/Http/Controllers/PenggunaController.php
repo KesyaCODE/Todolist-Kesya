@@ -38,7 +38,7 @@ class PenggunaController extends Controller
         //     return redirect('/todo/mytodo');
         // }
 
-        // ==> mbil data user dari tabel tb_login
+        // ==> ambil data user dari tabel tb_login
         // bila ada kan mengembalikan id
         $user = DB::table('tb_login')
                 ->where('nama_pengguna', $request->userName)

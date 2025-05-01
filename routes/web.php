@@ -12,7 +12,8 @@ Route::get('/', function () {
 Route::get('/auth/pegawai/prosesLogin', [PenggunaController::class, 'prosesLogin']);
 
 //route admin user
-Route::get('/todo/admin', [PenggunaController::class, 'adminLogin']);
+Route::get('/todo/admin', [PenggunaController::class, 'adminLogin']); // masuk halaman admin, tanpa autentikasi
+
 Route::get('/admin/todo/dataPenugasan', [TodoController::class, 'dataPenugasan']);
 Route::get('/admin/todo/penugasanBaru', [TodoController::class, 'penugasanBaru']);
 Route::get('/admin/todo/simpanPenugasanBaru', [TodoController::class, 'simpanPenugasanBaru']);
