@@ -31,5 +31,5 @@ Route::get('/todo/mytodo/{id}', [TodoController::class, 'mytodo']);
 Route::get('/todo/detailTugas/{id}', [TodoController::class, 'detailTodo']);
 Route::get('/todo/perbaruiTodo/{id}', [TodoController::class, 'perbaruiTodo']);
 
-Route::get('/todo/mytodo/selesai', [TodoController::class, 'todoSelesai']);
-Route::get('/todo/mytodo/ditolak', [TodoController::class, 'todoDitolak']);
+Route::get('/todo/mytodo/selesai/{id}', [TodoController::class, 'todoSelesai']);
+Route::get('/todo/mytodo/ditolak/{id}', [TodoController::class, 'todoDitolak']);

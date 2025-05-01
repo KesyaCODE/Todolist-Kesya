@@ -6,11 +6,17 @@
     <title>Beranda</title>
 
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
+    <style>
+        /* Menambahkan margin atau padding pada body */
+        body {
+            padding-top: 15px; /* Menambahkan jarak atas */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- rencana buat dalam bentuk session atau log out betulan -->
-        <p align="right"><a href="/">Keluar</a></p>
+        <p align="right"><a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/">Keluar</a></p>
         Selamat Datang, <b>{{ $detailPegawai->nama }}!</b>
         <hr>
 
@@ -24,7 +30,11 @@
             </p>
             </div>
             <div class="card-footer">
-            <small class="text-body-secondary"><a href="/todo/mytodo/{{ $detailPegawai->id }}" class="card-link">Lihat Tugas Saya!</a></small>
+            <small class="text-body-secondary">
+                <a href="/todo/mytodo/{{ $detailPegawai->id }}" class="card-link">
+                    Lihat Tugas Saya!
+                </a>
+            </small>
             </div>
         </div>
         <div class="card">
@@ -36,7 +46,11 @@
             </p>
             </div>
             <div class="card-footer">
-            <small class="text-body-secondary"><a href="/todo/mytodo/selesai">Tugas Selesai</a></td></small>
+            <small class="text-body-secondary">
+                <a href="/todo/mytodo/selesai/{{ $detailPegawai->id }}" class="card-link">
+                    Tugas Selesai
+                </a>
+            </small>
             </div>
         </div>
         <div class="card">
@@ -48,7 +62,11 @@
             </p>
             </div>
             <div class="card-footer">
-            <small class="text-body-secondary"><a href="/todo/mytodo/ditolak">Penolakan Saya</a></small>
+            <small class="text-body-secondary">
+                <a href="/todo/mytodo/ditolak/{{ $detailPegawai->id }}">
+                    Penolakan Saya
+                </a>
+            </small>
             </div>
         </div>
 </div>

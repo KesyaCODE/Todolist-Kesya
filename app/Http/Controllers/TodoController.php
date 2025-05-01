@@ -18,7 +18,7 @@ class TodoController extends Controller
         return view('todo.mytodo', [
             //bawa data dari $todo
             'daftarTugas' => $todo,
-            'idPengguna' => $id // id pengguna yang login 
+            'idPengguna' => $id // id pengguna yang login
         ]);
     }
 
@@ -59,23 +59,27 @@ class TodoController extends Controller
         
     }
 
-    public function todoSelesai() {
+    public function todoSelesai($id) {
         $todoSelesai = DB::table('tb_todo')
                 ->where('keterangan', 'Selesai')
+                ->where('tugas_untuk', $id)
                 ->get();
 
         return view('todo.todoSelesai', [
-            'todoSelesai' =>$todoSelesai
+            'todoSelesai' => $todoSelesai,
+            'idPengguna' => $id // id pengguna yang login
         ]);
     }
 
-    public function todoDitolak() {
+    public function todoDitolak($id) {
         $todoDitolak = DB::table('tb_todo')
                 ->where('keterangan', 'Ditolak')
+                ->where('tugas_untuk', $id)
                 ->get();
 
         return view('todo.todoDitolak', [
-            'todoDitolak' =>$todoDitolak
+            'todoDitolak' =>$todoDitolak,
+            'idPengguna' => $id // id pengguna yang login
         ]);
     }
 
