@@ -5,53 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Tugas / Todo</title>
 
-    <link rel="stylesheet" href="asset/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/assets/bootstrap.css" type="text/css">
 </head>
 <body>
-    <p align="right">
-        <a href="/">Keluar</a>
-    </p>
-    <center>
-        TUGAS TERSEDIA
-    </center>
-    <center>
-        [ <a href="/todo/admin">Beranda</a> ] |
-        [ <a href="/admin/todo/dataPenugasan">ToDo</a> ] | 
-        [ <a href="/admin/todo/rincianPenugasan">Rincian ToDo</a> ]
-    </center>
-    <hr>
-    <center>
-        [ <a href="/admin/todo/penugasanBaru">ToDo Baru</a> ]
-    </center>
-    @if (count($dataTodo)<0)
+    <div class="container-xl">
+        <br>
         <center>
-            Tidak ada todo!
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin">
+                Beranda
+            </a>
+            <br><br>
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanBaru">
+                Penugasan Baru
+            </a>
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanSelesai">
+                Tugas Selesai
+            </a> 
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanDitolak">
+                Tugas Ditolak
+            </a>
         </center>
-    @else
-        <table align="center" class="table-primary">
-            <tr class="table-primary">
-                <td>No.</td>
-                <td>Penugasan</td>
-                <td>Waktu Mulai</td>
-                <td>Waktu Selesai</td>
-                <td>Delegator</td>
-                <td>Delegasi</td>
-                <td>Status</td>
-                <td>Keterangan</td>
-            </tr>
-            @foreach ( $dataTodo as $dt )
-            <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td><a href="/admin/todo/ubahPenugasan/{{ $dt->id }}">{{ $dt->tugas }}</a></td>
-                <td>{{ $dt->waktu_mulai }}</td>
-                <td>{{ $dt->waktu_selesai }}</td>
-                <td>{{ $dt->nama_pemberi }}</td>
-                <td>{{ $dt->nama_penerima }}</td>
-                <td>{{ $dt->keterangan }}</td>
-                <td><a href="/admin/todo/hapusPenugasan/{{ $dt->id }}"><font color="red">Hapus</font></a></td>
-            </tr>
-            @endforeach
-        </table>
-    @endif
+         
+        <hr>
+        @if (count($dataTodo)<0)
+            <center>
+                Tidak ada todo!
+            </center>
+        @else
+            <table class="table table-striped table-hover table-bordered align-middle shadow-sm rounded">
+                <tr class="table-primary">
+                    <td>No.</td>
+                    <td>Penugasan</td>
+                    <td>Waktu Mulai</td>
+                    <td>Waktu Selesai</td>
+                    <td>Delegator</td>
+                    <td>Delegasi</td>
+                    <td>Status</td>
+                    <td>Keterangan</td>
+                </tr>
+                @foreach ( $dataTodo as $dt )
+                <tr>
+                    <td align="center">{{ $loop->iteration }}</td>
+                    <td><a class="text-decoration-none" href="/admin/todo/ubahPenugasan/{{ $dt->id }}">{{ $dt->tugas }}</a></td>
+                    <td>{{ $dt->waktu_mulai }}</td>
+                    <td>{{ $dt->waktu_selesai }}</td>
+                    <td>{{ $dt->nama_pemberi }}</td>
+                    <td>{{ $dt->nama_penerima }}</td>
+                    <td>
+                        @if ($dt->keterangan == 'Selesai')
+                            <span class="badge text-bg-success">
+                                Selesai
+                            </span>
+                        @elseif ($dt->keterangan == 'Ditolak')
+                            <span class="badge text-bg-warning">
+                                Ditolak
+                            </span>
+                        @elseif ($dt->keterangan == 'Ditugaskan')
+                            <span class="badge text-bg-info">
+                                Ditugaskan
+                            </span>
+                        @endif
+                    </td>
+                    <td align="center">
+                        <a class="text-decoration-none" href="/admin/todo/hapusPenugasan/{{ $dt->id }}">
+                            <span class="badge text-bg-danger">Hapus</span>
+                        </a>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
+        @endif
+    </div>
 </body>
 </html>

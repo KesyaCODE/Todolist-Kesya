@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail To Do</title>
+
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
+    <style>
+        /* Menambahkan margin atau padding pada body */
+        body {
+            padding-top: 15px; /* Menambahkan jarak atas */
+        }
+    </style>
 </head>
 <body>
     <center>

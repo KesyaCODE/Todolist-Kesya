@@ -15,19 +15,34 @@
 </head>
 <body>
     <div class="container-lg">
-        <p align="right"><a class="btn btn-outline-primary btn-sm" href="/">Keluar</a></p>
+        <p align="right"><a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/">Keluar</a></p>
         Selamat Datang, <b>admin!</b>
         <hr>
-        <table class="table table-striped table-hover table-bordered align-middle shadow-sm rounded">
-            <tr>
-                <td colspan="3" align="center"><b>Menu Penugasan</b></td>
-            </tr>
-            <tr align="center">
-                <td><a href="/admin/todo/dataPenugasan">Daftar Penugasan</a></td>
-                <td><a href="/admin/todo/mytodo/tugasDiselesaikan">Tugas Selesai</a></td>
-                <td><a href="/admin/todo/mytodo/tugasDitolak">Tugas Ditolak</a></td>
-            </tr>
+        <table class="table table-striped table-hover table-bordered align-middle shadow-sm rounded w-100 mb-4">
+            <thead class="table-success text-center">
+                <tr>
+                    <th colspan="4"><b>Menu Admin</b></th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <td>
+                        <a href="/admin/todo/dataPenugasan" class="text-decoration-none">
+                            Penugasan
+                        </a>
+                    </td>
+                    <td>
+                        <a class="text-decoration-none" href="/admin/todo/rincianPenugasan">
+                            Statistik Penugasan
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="text-decoration-none">Kegawaian</a>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
+    
 </body>
 </html>

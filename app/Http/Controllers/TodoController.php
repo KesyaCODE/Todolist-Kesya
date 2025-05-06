@@ -114,12 +114,13 @@ class TodoController extends Controller
 
     public function penugasanBaru() {
         $delegator = DB::table('tb_pegawai')
-                    ->where('jabatan', 'Manajer')
-                    ->orWhere('jabatan', 'CEO')
+                    // ->where('jabatan', 'Manajer')
+                    ->where('jabatan', 'CEO')
                     ->get();
         
         $pelaksana = DB::table('tb_pegawai')
                     ->where('jabatan', 'Staff')
+                    ->orWhere('jabatan', 'Manajer')
                     ->get();
         return view('admin.penugasanBaru', [
             'namaDelegator' => $delegator,

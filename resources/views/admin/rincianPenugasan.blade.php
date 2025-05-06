@@ -4,31 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rincian ToDo</title>
+
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
+    <style>
+        /* Menambahkan margin atau padding pada body */
+        body {
+            padding-top: 25px; /* Menambahkan jarak atas */
+        }
+    </style>
 </head>
 <body>
-<center>
-        [ <a href="/admin/todo/dataPenugasan">Beranda Tugas</a> ] | 
-        [ <a href="/admin/todo/penugasanSelesai">Tugas Selesai</a> ] | 
-        [ <a href="/admin/todo/penugasanDitolak">Tugas Ditolak</a> ] | 
-        [ <a href="/admin/todo/rincianPenugasan">Rincian Penugasan</a> ]
-</center>
-<hr>
-    <table border="1" align="center">
-        <tr>
-            <td colspan="2">Rincian Data ToDo</td>
-        </tr>
-        <tr>
-            <td>Ditugaskan</td>
-            <td>{{ count($ditugaskan) }}</td>
-        </tr>
-        <tr>
-            <td>Ditolak</td>
-            <td>{{ count($ditolak) }}</td>
-        </tr>
-        <tr>
-            <td>Diselesaikan</td>
-            <td>{{ count($diselesaikan) }}</td>
-        </tr>
-    </table>
+    <div class="container-md">
+        <center>
+            <a href="/todo/admin" class="btn btn-outline-primary rounded text-center" style="width: 180px;">Beranda</a>
+        </center>
+    <hr>
+        <table border="1" class="table table-hover">
+            <tr>
+                <td colspan="2" align="center">Rincian Data ToDo</td>
+            </tr>
+            <tr>
+                <td><a href="/admin/todo/dataPenugasan" class="text-decoration-none">Ditugaskan</a></td>
+                <td>
+                    <span class="badge text-bg-secondary">
+                        {{ count($ditugaskan) }}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="/admin/todo/penugasanSelesai" class="text-decoration-none">Diselesaikan</a></td>
+                <td>
+                    <span class="badge text-bg-success">
+                        {{ count($diselesaikan) }}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="/admin/todo/penugasanDitolak" class="text-decoration-none">Ditolak</a></td>
+                <td>
+                    <span class="badge text-bg-warning">
+                        {{ count($ditolak) }}
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

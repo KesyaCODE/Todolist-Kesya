@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penugasan Baru</title>
 
-    <!-- menambahkan css bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
+    <style>
+        /* Menambahkan margin atau padding pada body */
+        body {
+            padding-top: 25px; /* Menambahkan jarak atas */
+        }
+    </style>
 </head>
 <body>
-    <center>
-        BUAT PENUGASAN BARU <br>
-        [ <a href="/admin/todo/dataPenugasan">Beranda Tugas</a> ]
-    </center>
-    <hr>
     <div class="container-sm">
+        <center>
+            BUAT PENUGASAN BARU <br>
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin">
+                Beranda
+            </a>
+        </center>
+        <hr>
         <form action="/admin/todo/simpanPenugasanBaru" method="get" class="form-inline">
             <table>
                 <tr>
