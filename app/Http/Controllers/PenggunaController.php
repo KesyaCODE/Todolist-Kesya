@@ -14,6 +14,8 @@ class PenggunaController extends Controller
                 ->first();
 
                 // kirim data pegawai ke view dengan parameter detailPegawai ( id, nama, jabatan )
+                // bila role pegawai, tampilkan halaman pegawai
+                // bila role admin, tampilkan halaman admin
         return view('todo.beranda', [
             'detailPegawai' => $pegawai
         ]);
@@ -53,9 +55,20 @@ class PenggunaController extends Controller
                             ->where('id', $user->id)
                             ->first();
 
-                    return view('todo.beranda', [
-                        'detailPegawai' => $detailPegawai
-                    ]);
+                            // jika jabatan CEO, tampilkan halaman admin
+                            // jika jabatan Manajer, tampilkan halaman khusus CEO
+                            // jika jabatan Staff, tampilkan halaman pegawai
+
+                            if($detailPegawai->jabatan == 'Staff') { // bila jabatan Staff
+                                return view('todo.beranda', [
+                                    'detailPegawai' => $detailPegawai
+                                ]);
+                            } else if ($detailPegawai->jabatan == 'Manajer') { // bila jabatan Manajer
+                                return "Halaman Manajer"; 
+                            } else { // bila jabatan CEO
+                                return view('admin.beranda');
+                                
+                            }
                 } else {
                     return redirect('/')->with('error', 'Nama pengguna tidak ditemukan! Mohon perbaiki kembali...');
                 }
