@@ -15,10 +15,8 @@
 </head>
 <body>
     <div class="container-md">
-        <center>
-            <a href="/todo/admin" class="btn btn-outline-primary rounded text-center" style="width: 180px;">Beranda</a>
-        </center>
-    <hr>
+        <a href="/todo/admin" class="btn btn-outline-primary rounded text-center" style="width: 180px;">Beranda</a>
+        <hr>
         <table border="1" class="table table-hover">
             <tr>
                 <td colspan="2" align="center">Rincian Data ToDo</td>

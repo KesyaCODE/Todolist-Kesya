@@ -38,8 +38,8 @@
                 <td>{{ $pD->tugas }}</td>
                 <td>{{ $pD->waktu_mulai }}</td>
                 <td>{{ $pD->waktu_selesai }}</td>
-                <td>{{ $pD->tugas_dari }}</td>
-                <td>{{ $pD->tugas_untuk }}</td>
+                <td>{{ $pD->nama_pemberi }}</td>
+                <td>{{ $pD->nama_penerima }}</td>
             </tr>   
             @endforeach
         </table>

@@ -10,11 +10,9 @@
 <body>
     <div class="container-xl">
         <br>
-        <center>
             <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin">
                 Beranda
             </a>
-            <br><br>
             <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanBaru">
                 Penugasan Baru
             </a>
@@ -24,7 +22,6 @@
             <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanDitolak">
                 Tugas Ditolak
             </a>
-        </center>
          
         <hr>
         @if (count($dataTodo)<0)

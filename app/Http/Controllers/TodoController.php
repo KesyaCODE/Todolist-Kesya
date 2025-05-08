@@ -241,6 +241,11 @@ class TodoController extends Controller
 
     public function penugasanSelesai() {
         $penugasanSelesai = DB::table('tb_todo')
+                ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
+                ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
+                ->select('tb_todo.*',
+                    'pemberi.nama as nama_pemberi',
+                    'penerima.nama as nama_penerima')
                 ->where('keterangan', 'Selesai')
                 ->get();
         return view('admin.penugasanSelesai', [
@@ -250,6 +255,11 @@ class TodoController extends Controller
 
     public function penugasanDitolak() {
         $penugasanDitolak = DB::table('tb_todo')
+                ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
+                ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
+                ->select('tb_todo.*',
+                    'pemberi.nama as nama_pemberi',
+                    'penerima.nama as nama_penerima')
                 ->where('keterangan', 'Ditolak')
                 ->get();
         return view('admin.penugasanDitolak', [
