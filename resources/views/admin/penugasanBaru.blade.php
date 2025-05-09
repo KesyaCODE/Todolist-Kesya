@@ -15,18 +15,15 @@
 </head>
 <body>
     <div class="container-sm">
-        <center>
-            BUAT PENUGASAN BARU <br>
-            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin">
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin/{{ $adminId }}">
                 Beranda
             </a>
-        </center>
         <hr>
         <form action="/admin/todo/simpanPenugasanBaru" method="get" class="form-inline">
             <table>
                 <tr>
                     <td>Nama Tugas</td>
-                    <td><input type="text" name="namaTodo" class="form-control"></td>
+                    <td><input type="text" name="namaTodo" class="form-control" placeholder="Nama Tugas"></td>
                 </tr>
                 <tr>
                     <td>Waktu Mulai</td>

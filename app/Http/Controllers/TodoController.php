@@ -113,10 +113,10 @@ class TodoController extends Controller
         ]);
     }
 
-    public function penugasanBaru() {
+    public function penugasanBaru($id) {
         $delegator = DB::table('tb_pegawai')
                     // ->where('jabatan', 'Manajer')
-                    ->where('jabatan', 'CEO')
+                    ->where('id', $id)
                     ->get();
         
         $pelaksana = DB::table('tb_pegawai')
@@ -125,7 +125,8 @@ class TodoController extends Controller
                     ->get();
         return view('admin.penugasanBaru', [
             'namaDelegator' => $delegator,
-            'namaPelaksana' => $pelaksana
+            'namaPelaksana' => $pelaksana,
+            'adminId' => $id // id admin yang login
         ]);
     }
 

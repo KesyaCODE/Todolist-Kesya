@@ -13,7 +13,7 @@
             <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin/{{ $adminId }}">
                 Beranda
             </a>
-            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanBaru">
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanBaru/{{ $adminId }}">
                 Penugasan Baru
             </a>
             <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanSelesai">
