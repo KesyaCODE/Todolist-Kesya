@@ -66,7 +66,7 @@
                         labels: ['Ditugaskan', 'Diselesaikan', 'Ditolak'],
                         datasets: [{
                             label: 'Status ToDo',
-                            data: [
+                            data:   [
                                 {{ $jumlahDitugaskan }}, 
                                 {{ $jumlahDiselesaikan }}, 
                                 {{ $jumlahDitolak }}
