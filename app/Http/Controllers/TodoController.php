@@ -256,7 +256,7 @@ class TodoController extends Controller
         ]);
     }
 
-    public function penugasanDitolak() {
+    public function penugasanDitolak($id) {
         $penugasanDitolak = DB::table('tb_todo')
                 ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
                 ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
@@ -266,7 +266,8 @@ class TodoController extends Controller
                 ->where('keterangan', 'Ditolak')
                 ->get();
         return view('admin.penugasanDitolak', [
-            'penugasanDitolak' => $penugasanDitolak
+            'penugasanDitolak' => $penugasanDitolak,
+            'adminId' => $id // id admin yang login
         ]);
     }
 

@@ -21,6 +21,9 @@
         <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/dataPenugasan/{{ $adminId }}">
             Rekap Penugasan
         </a>
+        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanDitolak/{{ $adminId }}">
+            Tugas Ditolak
+        </a>
         <hr>
         <table class="table table-bordered border-primary">
             <tr>
