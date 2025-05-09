@@ -18,7 +18,7 @@ Route::get('/admin/todo/dataPenugasan/{id}', [TodoController::class, 'dataPenuga
 Route::get('/admin/todo/penugasanBaru/{id}', [TodoController::class, 'penugasanBaru']);
 Route::get('/admin/todo/simpanPenugasanBaru', [TodoController::class, 'simpanPenugasanBaru']);
 Route::get('/admin/todo/ubahPenugasan/{id}/{adminId}', [TodoController::class, 'ubahPenugasan']);
-Route::get('/admin/todo/simpanPerubahanPenugasan/{id}', [TodoController::class, 'simpanPembaruanTugas']);
+Route::get('/admin/todo/simpanPerubahanPenugasan/{id}/{adminId}', [TodoController::class, 'simpanPembaruanTugas']);
 Route::get('/admin/todo/hapusPenugasan/{id}', [TodoController::class, 'hapusPenugasan']);
 Route::get('/admin/todo/penugasanSelesai/{id}', [TodoController::class, 'penugasanSelesai']);
 Route::get('/admin/todo/penugasanDitolak/{id}', [TodoController::class, 'penugasanDitolak']);

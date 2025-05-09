@@ -194,7 +194,7 @@ class TodoController extends Controller
         ]);
     }
 
-    public function simpanPembaruanTugas(Request $request, $id) {
+    public function simpanPembaruanTugas(Request $request, $id, $adminId) {
         //update status dalam tb_todo
         //kemudian simpan pembaruan data dalam tb_hasiltodo
         DB::table('tb_todo')
@@ -216,7 +216,8 @@ class TodoController extends Controller
                     'penerima.nama as nama_penerima')
                 ->get();
         return view('admin.dataPenugasan', [
-                'dataTodo' => $todo
+                'dataTodo' => $todo,
+                'adminId' => $adminId // id admin yang login
             ]);
     }
 

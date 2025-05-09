@@ -32,7 +32,7 @@
             Ubah Data Tugas
         </center>
         @foreach ( $detailTodo as $dt )
-        <form action="/admin/todo/simpanPerubahanPenugasan/{{ $dt->id }}" method="get">
+        <form action="/admin/todo/simpanPerubahanPenugasan/{{ $dt->id }}/{{ $adminId }}" method="get">
             @csrf
             <table>
                 <tr>
