@@ -284,11 +284,25 @@ class TodoController extends Controller
                 ->where('keterangan', 'Ditolak')
                 ->get();
 
+        // mengambil nilai jumlah penugasan
+        $jumlahDitugaskan = DB::table('tb_todo')
+                ->where('keterangan', 'Ditugaskan')
+                ->count();
+        $jumlahDiselesaikan = DB::table('tb_todo')
+                ->where('keterangan', 'Selesai')
+                ->count();
+        $jumlahDitolak = DB::table('tb_todo')
+                ->where('keterangan', 'Ditolak')
+                ->count();
+
         return view('admin.rincianPenugasan', [
                     'ditugaskan' => $ditugaskan,
                     'diselesaikan' => $diselesaikan,
                     'ditolak' => $ditolak,
-                    'adminId' => $id // id admin yang login
+                    'adminId' => $id, // id admin yang login
+                    'jumlahDitugaskan' => $jumlahDitugaskan,
+                    'jumlahDiselesaikan' => $jumlahDiselesaikan,
+                    'jumlahDitolak' => $jumlahDitolak
                 ]);
     }
 }

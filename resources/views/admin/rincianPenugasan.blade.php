@@ -12,6 +12,10 @@
             padding-top: 25px; /* Menambahkan jarak atas */
         }
     </style>
+
+    <!-- script untuk grafik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
 </head>
 <body>
     <div class="container-md">
@@ -46,6 +50,44 @@
                 </td>
             </tr>
         </table>
+        <hr>
+        <center>
+            <!-- tempat dan ukuran chart pie -->
+        <div style="width: 600px; height: 400px;">
+            <canvas id="todoChart" width="400" height="200"></canvas>
+        </div>
+            
+            <!-- membuat chart bentuk pie -->
+            <script>
+                const ctx = document.getElementById('todoChart').getContext('2d');
+                const todoChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Ditugaskan', 'Diselesaikan', 'Ditolak'],
+                        datasets: [{
+                            label: 'Status ToDo',
+                            data: [
+                                {{ $jumlahDitugaskan }}, 
+                                {{ $jumlahDiselesaikan }}, 
+                                {{ $jumlahDitolak }}
+                            ], // Gantilah ini dengan data dari controller
+                            backgroundColor: [
+                                'rgba(108, 117, 125, 0.7)', // abu-abu
+                                'rgba(25, 135, 84, 0.7)',   // hijau
+                                'rgba(255, 193, 7, 0.7)'    // kuning
+                            ],
+                            borderColor: [
+                                'rgba(108, 117, 125, 1)',
+                                'rgba(25, 135, 84, 1)',
+                                'rgba(255, 193, 7, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    }
+                });
+            </script>
+        </center>
+
     </div>
 </body>
 </html>
