@@ -15,16 +15,16 @@
 </head>
 <body>
     <div class="container-lg">
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin">
+        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin/{{ $adminId }}">
             Beranda
         </a>
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/dataPenugasan">
-            Penugasan
+        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/dataPenugasan/{{ $adminId }}">
+            Rekap Penugasan
         </a>
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanSelesai">
+        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanSelesai/{{ $adminId }}">
             Tugas Selesai
         </a> 
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanDitolak">
+        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanDitolak/{{ $adminId }}">
             Tugas Ditolak            
         </a>
         <hr>
@@ -76,7 +76,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Ubah Penugasan"></td>
+                    <td><input type="submit" value="Ubah Penugasan" class="btn btn-outline-primary rounded text-center"></td>
                 </tr>
             </table>
         </form>

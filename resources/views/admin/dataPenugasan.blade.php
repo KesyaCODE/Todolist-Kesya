@@ -43,7 +43,7 @@
                 @foreach ( $dataTodo as $dt )
                 <tr>
                     <td align="center">{{ $loop->iteration }}</td>
-                    <td><a class="text-decoration-none" href="/admin/todo/ubahPenugasan/{{ $dt->id }}">{{ $dt->tugas }}</a></td>
+                    <td><a class="text-decoration-none" href="/admin/todo/ubahPenugasan/{{ $dt->id }}/{{ $adminId }}">{{ $dt->tugas }}</a></td>
                     <td>{{ $dt->waktu_mulai }}</td>
                     <td>{{ $dt->waktu_selesai }}</td>
                     <td>{{ $dt->nama_pemberi }}</td>

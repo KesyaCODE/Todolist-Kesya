@@ -159,7 +159,7 @@ class TodoController extends Controller
         ]);
     }
 
-    public function ubahPenugasan($id) {
+    public function ubahPenugasan($id, $adminId) {
         // $detailTodo = DB::table('tb_todo')
         //             ->where('id', $id)
         //             ->get();
@@ -175,20 +175,22 @@ class TodoController extends Controller
         
         //ambil data Manajer dan CEO
         $delegator = DB::table('tb_pegawai')
-                    ->where('jabatan', 'Manajer')
-                    ->orWhere('jabatan', 'CEO')
+                    ->where('id', $adminId)
+                    // ->orWhere('jabatan', 'CEO')
                     ->get();
 
-        //ambil data Staff SELAIN Manajer dan CEO
+        //ambil data Staff CEO
         $pelaksana = DB::table('tb_pegawai')
                     ->where('jabatan', 'Staff')
+                    ->orWhere('jabatan', 'Manajer')
                     ->get();
 
         return view('admin.ubahPenugasan', [
             //bawa data dari $todo
             'detailTodo' => $detailTodo,
             'delegator' => $delegator,
-            'pelaksana' => $pelaksana
+            'pelaksana' => $pelaksana,
+            'adminId' => $adminId // id admin yang login
         ]);
     }
 
