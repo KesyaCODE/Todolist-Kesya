@@ -15,14 +15,14 @@
 </head>
 <body>
     <div class="container-md">
-        <a href="/todo/admin" class="btn btn-outline-primary rounded text-center" style="width: 180px;">Beranda</a>
+        <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded text-center" style="width: 180px;">Beranda</a>
         <hr>
         <table border="1" class="table table-hover">
             <tr>
                 <td colspan="2" align="center">Rincian Data ToDo</td>
             </tr>
             <tr>
-                <td><a href="/admin/todo/dataPenugasan" class="text-decoration-none">Ditugaskan</a></td>
+                <td><a href="/admin/todo/dataPenugasan/{{ $adminId }}" class="text-decoration-none">Ditugaskan</a></td>
                 <td>
                     <span class="badge text-bg-secondary">
                         {{ count($ditugaskan) }}
@@ -30,7 +30,7 @@
                 </td>
             </tr>
             <tr>
-                <td><a href="/admin/todo/penugasanSelesai" class="text-decoration-none">Diselesaikan</a></td>
+                <td><a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="text-decoration-none">Diselesaikan</a></td>
                 <td>
                     <span class="badge text-bg-success">
                         {{ count($diselesaikan) }}
@@ -38,7 +38,7 @@
                 </td>
             </tr>
             <tr>
-                <td><a href="/admin/todo/penugasanDitolak" class="text-decoration-none">Ditolak</a></td>
+                <td><a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="text-decoration-none">Ditolak</a></td>
                 <td>
                     <span class="badge text-bg-warning">
                         {{ count($ditolak) }}

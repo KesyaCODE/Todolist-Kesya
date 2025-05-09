@@ -271,7 +271,7 @@ class TodoController extends Controller
         ]);
     }
 
-    public function rincianPenugasan() {
+    public function rincianPenugasan($id) {
         $ditugaskan = DB::table('tb_todo')
                 ->where('keterangan', 'Ditugaskan')
                 ->get();
@@ -286,6 +286,7 @@ class TodoController extends Controller
                     'ditugaskan' => $ditugaskan,
                     'diselesaikan' => $diselesaikan,
                     'ditolak' => $ditolak,
+                    'adminId' => $id // id admin yang login
                 ]);
     }
 }

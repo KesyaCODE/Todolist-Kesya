@@ -33,7 +33,7 @@
                         </a>
                     </td>
                     <td>
-                        <a class="text-decoration-none" href="/admin/todo/rincianPenugasan">
+                        <a class="text-decoration-none" href="/admin/todo/rincianPenugasan/{{ $detailPegawai->id }}">
                             Statistik Penugasan
                         </a>
                     </td>
