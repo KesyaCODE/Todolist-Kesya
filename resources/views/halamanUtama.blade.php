@@ -18,18 +18,12 @@
 <body>
     <div class="container-xxl">
         <div class="card">
-            <div class="card-header">
-                <p align="right">
-                    <!-- rencana membuka halaman auth admin -->
-                    Admin ? <a href="/todo/admin">Klik Disini</a>
-                </p>
-            </div>
             <div class="card-body">
                 <center>
                     <h5 class="card-title">Tugas Manajemen ( Todo App )</h5>
                     <p class="card-text">Build with Laravel and MySQL Database</p>
                     <!-- rencana membuka halaman auth untuk selain admin / variasi lain -->
-                    <a href="/todo/user/login">Masuk</a>
+                    <!-- <a href="/todo/user/login">Masuk</a> -->
                     <hr>
                     @if(session('error'))
                         <div class="alert alert-danger">
@@ -50,7 +44,7 @@
                         <input type="password" name="kataSandi" class="form-control" id="exampleFormControlInput1" placeholder="Kata Sandi">
                         </div>
                         <div class="mb-3">
-                        <input type="submit" class="btn btn-primary">
+                        <input type="submit" class="btn btn-primary" value="Masuk!">
                         </div>
                     </form>
                 </center>

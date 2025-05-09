@@ -84,7 +84,7 @@ class TodoController extends Controller
     }
 
     //admin method
-    public function dataPenugasan() {
+    public function dataPenugasan($id) {
         // mengambil data umum, delegator dan nama hanya by id
         // $semuaTodo = DB::table('tb_todo')
         //         ->get();
@@ -108,7 +108,8 @@ class TodoController extends Controller
                 ->get();
             
         return view('admin.dataPenugasan', [
-            'dataTodo' => $semuaTodo
+            'dataTodo' => $semuaTodo,
+            'adminId' => $id // id admin yang login
         ]);
     }
 

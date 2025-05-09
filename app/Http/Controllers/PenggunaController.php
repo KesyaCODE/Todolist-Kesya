@@ -17,13 +17,19 @@ class PenggunaController extends Controller
                 // bila role pegawai, tampilkan halaman pegawai
                 // bila role admin, tampilkan halaman admin
         return view('todo.beranda', [
-            'detailPegawai' => $pegawai
+            'detailPegawai' => $pegawai,
+
         ]);
     }
 
     // method admin
-    public function adminLogin() {
-        return view('admin.beranda');
+    public function adminLogin($id) {
+        $detailPegawai = DB::table('tb_pegawai')
+                            ->where('id', $id)
+                            ->first();
+        return view('admin.beranda', [
+           'detailPegawai' => $detailPegawai
+        ]);
     }
 
     public function prosesLogin(Request $request) {
@@ -64,9 +70,11 @@ class PenggunaController extends Controller
                                     'detailPegawai' => $detailPegawai
                                 ]);
                             } else if ($detailPegawai->jabatan == 'Manajer') { // bila jabatan Manajer
-                                return "Halaman Manajer"; 
+                                return "Halaman Manajer, <b>halaman akan segera hadir!</b>"; 
                             } else { // bila jabatan CEO
-                                return view('admin.beranda');
+                                return view('admin.beranda', [
+                                    'detailPegawai' => $detailPegawai
+                                ]);
                                 
                             }
                 } else {
