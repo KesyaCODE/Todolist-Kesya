@@ -70,7 +70,9 @@ class PenggunaController extends Controller
                                     'detailPegawai' => $detailPegawai
                                 ]);
                             } else if ($detailPegawai->jabatan == 'Manajer') { // bila jabatan Manajer
-                                return "Halaman Manajer, <b>halaman akan segera hadir!</b>"; 
+                                return view('manajer.beranda', [
+                                    'detailPegawai' => $detailPegawai
+                                ]); 
                             } else { // bila jabatan CEO
                                 return view('admin.beranda', [
                                     'detailPegawai' => $detailPegawai
