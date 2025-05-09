@@ -241,7 +241,7 @@ class TodoController extends Controller
         return redirect('/admin/todo/dataPenugasan');
     }
 
-    public function penugasanSelesai() {
+    public function penugasanSelesai($id) {
         $penugasanSelesai = DB::table('tb_todo')
                 ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
                 ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
@@ -252,6 +252,7 @@ class TodoController extends Controller
                 ->get();
         return view('admin.penugasanSelesai', [
             'penugasanSelesai' => $penugasanSelesai,
+            'adminId' => $id // id admin yang login
         ]);
     }
 

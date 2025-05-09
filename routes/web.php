@@ -20,7 +20,7 @@ Route::get('/admin/todo/simpanPenugasanBaru', [TodoController::class, 'simpanPen
 Route::get('/admin/todo/ubahPenugasan/{id}', [TodoController::class, 'ubahPenugasan']);
 Route::get('/admin/todo/simpanPerubahanPenugasan/{id}', [TodoController::class, 'simpanPembaruanTugas']);
 Route::get('/admin/todo/hapusPenugasan/{id}', [TodoController::class, 'hapusPenugasan']);
-Route::get('/admin/todo/penugasanSelesai', [TodoController::class, 'penugasanSelesai']);
+Route::get('/admin/todo/penugasanSelesai/{id}', [TodoController::class, 'penugasanSelesai']);
 Route::get('/admin/todo/penugasanDitolak', [TodoController::class, 'penugasanDitolak']);
 Route::get('/admin/todo/rincianPenugasan', [TodoController::class, 'rincianPenugasan']);
 

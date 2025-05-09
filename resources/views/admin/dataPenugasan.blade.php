@@ -16,7 +16,7 @@
             <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanBaru/{{ $adminId }}">
                 Penugasan Baru
             </a>
-            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanSelesai">
+            <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanSelesai/{{ $adminId }}">
                 Tugas Selesai
             </a> 
             <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanDitolak">

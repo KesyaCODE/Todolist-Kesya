@@ -15,10 +15,10 @@
 </head>
 <body>
     <div class="container-md">
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin">
+        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin/{{ $adminId }}">
             Beranda
         </a>
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/dataPenugasan">
+        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/dataPenugasan/{{ $adminId }}">
             Rekap Penugasan
         </a>
         <hr>
