@@ -35,7 +35,7 @@
                         </div>
                     @endif
 
-                    <form action="/auth/pegawai/prosesLogin" method="get">
+                    <form action="/auth/pegawai/prosesLogin" method="post">
                         @csrf
                         <div class="mb-3">
                         <input type="text" name="userName" class="form-control" id="exampleFormControlInput1" placeholder="Email atau nama pengguna">

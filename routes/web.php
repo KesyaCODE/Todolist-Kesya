@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 //auth pengguna
-Route::get('/auth/pegawai/prosesLogin', [PenggunaController::class, 'prosesLogin']);
+Route::post('/auth/pegawai/prosesLogin', [PenggunaController::class, 'prosesLogin']);
 
 //route admin user
 Route::get('/todo/admin/{id}', [PenggunaController::class, 'adminLogin']); // masuk halaman admin, tanpa autentikasi

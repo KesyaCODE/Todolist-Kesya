@@ -22,7 +22,7 @@
 
         <div class="card-group">
         <div class="card">
-            <img src="/img/todo.png" class="card-img-top" width="100" height="300" alt="...">
+            <img src="/img/todo.png" class="card-img-top" width="100" height="250">
             <div class="card-body">
             <h5 class="card-title">Daftar Tugas</h5>
             <p class="card-text">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="/img/todo_selesai.png" class="card-img-top"  width="100" height="300" alt="...">
+            <img src="/img/todo_selesai.png" class="card-img-top" width="100" height="250">
             <div class="card-body">
             <h5 class="card-title">Tugas Diselesaikan</h5>
             <p class="card-text">
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="/img/todo_gagal.png" class="card-img-top"  width="100" height="300" alt="...">
+            <img src="/img/todo_gagal.png" class="card-img-top" width="100" height="250">
             <div class="card-body">
             <h5 class="card-title">Tugas Ditolak</h5>
             <p class="card-text">
