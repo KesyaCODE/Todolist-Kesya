@@ -33,21 +33,6 @@ class PenggunaController extends Controller
     }
 
     public function prosesLogin(Request $request) {
-        // Proses login pengguna
-        // Validasi dan autentikasi pengguna
-        // Redirect ke halaman admin atau user sesuai dengan peran pengguna
-
-        // if ($request->userName != 'admin@todo.org' && $request->kataSandi != 'admin') {
-        //     return redirect('/')->with('error', 'Kombinasi salah! Mohon perbaiki kembali...');
-        // } else if ($request->userName == "" && $request->kataSandi == "") {
-        //     return redirect('/')->with('kosong', 'Harus diisi semua! Mohon perbaiki kembali...'); 
-        // }
-        // else {
-        //     return redirect('/todo/mytodo');
-        // }
-
-        // ==> ambil data user dari tabel tb_login
-        // bila ada kan mengembalikan id
         $user = DB::table('tb_login')
                 ->where('nama_pengguna', $request->userName)
                 ->where('kata_sandi', $request->kataSandi)

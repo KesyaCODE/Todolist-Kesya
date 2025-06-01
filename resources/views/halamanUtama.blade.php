@@ -20,8 +20,8 @@
         <div class="card">
             <div class="card-body">
                 <center>
-                    <h5 class="card-title">Tugas Manajemen ( Todo App )</h5>
-                    <p class="card-text">Build with Laravel and MySQL Database</p>
+                    <h5 class="card-title">Tugas-Tugas Lembaga</h5>
+                    <p class="card-text">Riwayat dan Status Penugasan</p>
                     <!-- rencana membuka halaman auth untuk selain admin / variasi lain -->
                     <!-- <a href="/todo/user/login">Masuk</a> -->
                     <hr>
