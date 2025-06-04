@@ -15,7 +15,8 @@
     </style>
 </head>
 <body>
-    <nav style="--bs-breadcrumb-divider: ''; padding-left: 20px;" aria-label="breadcrumb">
+    <div class="container-sm">
+        <nav style="--bs-breadcrumb-divider: ''; padding-left: 20px;" aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/todo/user/login/{{ $idPengguna }}">
@@ -62,5 +63,6 @@
     @else
         <center>Tidak ditemukan data!</center>
     @endif
+    </div>
 </body>
 </html>

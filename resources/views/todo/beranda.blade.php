@@ -22,7 +22,7 @@
 
         <div class="card-group">
         <div class="card">
-            <img src="/img/todo.png" class="card-img-top" width="100" height="250">
+            <img src="/img/todo.png" class="card-img-top mx-auto d-block img-fluid" style="max-width: 50%; height: auto;">
             <div class="card-body">
             <h5 class="card-title">Daftar Tugas</h5>
             <p class="card-text">
@@ -37,24 +37,26 @@
             </small>
             </div>
         </div>
+
         <div class="card">
-            <img src="/img/todo_selesai.png" class="card-img-top" width="100" height="250">
+            <img src="/img/todo_selesai.png" class="card-img-top mx-auto d-block img-fluid" style="max-width: 50%; height: auto;">
             <div class="card-body">
-            <h5 class="card-title">Tugas Diselesaikan</h5>
-            <p class="card-text">
-                Tugas yang sudah anda selesaikan. Silahkan pilih tugas yang ingin dilihat hasilnya.
-            </p>
+                <h5 class="card-title">Tugas Diselesaikan</h5>
+                <p class="card-text">
+                    Tugas yang sudah anda selesaikan. Silahkan pilih tugas yang ingin dilihat hasilnya.
+                </p>
             </div>
             <div class="card-footer">
-            <small class="text-body-secondary">
-                <a href="/todo/mytodo/selesai/{{ $detailPegawai->id }}" class="card-link">
-                    Tugas Selesai
-                </a>
-            </small>
+                <small class="text-body-secondary">
+                    <a href="/todo/mytodo/selesai/{{ $detailPegawai->id }}" class="card-link">
+                        Tugas Selesai
+                    </a>
+                </small>
             </div>
         </div>
+
         <div class="card">
-            <img src="/img/todo_gagal.png" class="card-img-top" width="100" height="250">
+            <img src="/img/todo_gagal.png" class="card-img-top mx-auto d-block img-fluid" style="max-width: 50%; height: auto;">
             <div class="card-body">
             <h5 class="card-title">Tugas Ditolak</h5>
             <p class="card-text">
