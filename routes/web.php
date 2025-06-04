@@ -29,7 +29,7 @@ Route::get('/todo/user/login/{id}', [PenggunaController::class, 'login']);
 
 //route todo
 Route::get('/todo/mytodo/{id}', [TodoController::class, 'mytodo']);
-Route::get('/todo/detailTugas/{id}', [TodoController::class, 'detailTodo']);
+Route::get('/todo/detailTugas/{id}/{idPengguna}', [TodoController::class, 'detailTodo']);
 Route::get('/todo/perbaruiTodo/{id}', [TodoController::class, 'perbaruiTodo']);
 
 Route::get('/todo/mytodo/selesai/{id}', [TodoController::class, 'todoSelesai']);

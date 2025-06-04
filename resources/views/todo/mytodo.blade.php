@@ -45,17 +45,14 @@
     
     <!-- bila data tidak ada, tampilkan pesan tidak ada data -->
     @if (count($daftarTugas)>0) 
-    <table border="0" align="center">
+    <table border="0">
             @foreach ( $daftarTugas as $tugas )
             <tr>
                 <td>{{ $loop->iteration }}.</td>
                 <td>
-                    <a href="/todo/detailTugas/{{ $tugas->id }}" class="link-offset-2 link-underline link-underline-opacity-0">
+                    <a href="/todo/detailTugas/{{ $tugas->id }}/{{ $idPengguna }}" class="link-offset-2 link-underline link-underline-opacity-0">
                         {{ $tugas->tugas }}
                     </a>
-                </td>
-                <td>
-                    {{ $tugas->waktu_mulai }}
                 </td>
             </tr>
             @endforeach

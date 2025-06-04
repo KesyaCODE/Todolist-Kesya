@@ -14,10 +14,27 @@
     </style>
 </head>
 <body>
-    <center>
-        <a href="/todo/user/login">Beranda</a> |
-        <a href="/todo/mytodo/selesai">Tugas Selesai</a> |
-        <a href="/todo/mytodo/ditolak">Tugas Ditolak</a>
+    <div class="container-sm">
+        <center>
+        <nav style="--bs-breadcrumb-divider: ''; padding-left: 20px;" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-2 py-1 text-sm" href="/todo/user/login/{{ $idPengguna }}">
+                Beranda
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-2 py-1 text-sm" href="/todo/mytodo/selesai/{{ $idPengguna }}">
+                Tugas Selesai
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-2 py-1 text-sm" href="/todo/mytodo/ditolak/{{ $idPengguna }}">
+                Tugas Ditolak
+            </a>
+        </li>
+    </ol>
+    </nav>
     </center>
     <hr>
         <table align="center" border="0">
@@ -57,5 +74,6 @@
                 </form>
             @endforeach
         </table>
+    </div>
 </body>
 </html>

@@ -22,7 +22,7 @@ class TodoController extends Controller
         ]);
     }
 
-    public function detailTodo($id) {
+    public function detailTodo($id, $idPengguna) {
         $detailTodo = DB::table('tb_todo as todo')
             ->join('tb_pegawai as pemberi', 'todo.tugas_dari', '=', 'pemberi.id')
             ->select(
@@ -38,7 +38,8 @@ class TodoController extends Controller
             // ->first(); // Mengambil satu data
 
         return view('todo.detailTodo', [
-            'detailTodo' => $detailTodo
+            'detailTodo' => $detailTodo,
+            'idPengguna' => $idPengguna // id pengguna yang login
         ]);
     }
 

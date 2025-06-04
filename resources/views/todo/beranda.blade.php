@@ -66,7 +66,7 @@
             <div class="card-footer">
             <small class="text-body-secondary">
                 <a href="/todo/mytodo/ditolak/{{ $detailPegawai->id }}">
-                    Penolakan Saya
+                    Tidak Diselesaikan
                 </a>
             </small>
             </div>
