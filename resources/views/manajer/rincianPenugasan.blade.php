@@ -19,7 +19,18 @@
 </head>
 <body>
     <div class="container-md">
-        <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded text-center" style="width: 180px;">Beranda</a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/todo/manajer/{{ $adminId }}">
+                Beranda
+            </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/manajer/todo/penugasanBaru/{{ $adminId }}">
+                Penugasan Baru
+            </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/manajer/todo/penugasanSelesai/{{ $adminId }}">
+                Tugas Selesai
+            </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/manajer/todo/penugasanDitolak/{{ $adminId }}">
+                Tugas Ditolak
+            </a> 
         <hr>
         <table border="1" class="table table-hover">
             <tr>

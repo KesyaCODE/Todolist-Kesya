@@ -15,18 +15,18 @@
 </head>
 <body>
     <div class="container-lg">
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/todo/admin/{{ $adminId }}">
-            Beranda
-        </a>
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/dataPenugasan/{{ $adminId }}">
-            Rekap Penugasan
-        </a>
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanSelesai/{{ $adminId }}">
-            Tugas Selesai
-        </a> 
-        <a class="btn btn-outline-primary rounded text-center" style="width: 180px;" href="/admin/todo/penugasanDitolak/{{ $adminId }}">
-            Tugas Ditolak            
-        </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/todo/manajer/{{ $adminId }}">
+                Beranda
+            </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/manajer/todo/penugasanBaru/{{ $adminId }}">
+                Penugasan Baru
+            </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/manajer/todo/penugasanSelesai/{{ $adminId }}">
+                Tugas Selesai
+            </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/manajer/todo/penugasanDitolak/{{ $adminId }}">
+                Tugas Ditolak
+            </a> 
         <hr>
         <center>
             Ubah Data Tugas
