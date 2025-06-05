@@ -17,7 +17,10 @@
     <div class="container-lg">
         <p align="right"><a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/">Keluar</a></p>
         <!-- menampilkan nama admin yang log in -->
-        Selamat Datang, <b>{{ $detailPegawai->nama }}!</b> 
+        Selamat Datang, <b>{{ $detailPegawai->nama }}!</b><br>
+        <font size="2" class="text-secondary">
+            {{ $detailPegawai->jabatan }}
+        </font>
         <hr>
         <table class="table table-striped table-hover table-bordered align-middle shadow-sm rounded w-100 mb-4">
             <thead class="table-success text-center">

@@ -17,7 +17,10 @@
     <div class="container">
         <!-- rencana buat dalam bentuk session atau log out betulan -->
         <p align="right"><a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/">Keluar</a></p>
-        Selamat Datang, <b>{{ $detailPegawai->nama }}!</b>
+        Selamat Datang, <b>{{ $detailPegawai->nama }}!</b><br>
+        <font size="2" class="text-secondary">
+            {{ $detailPegawai->jabatan }}
+        </font>
         <hr>
 
         <div class="card-group">
