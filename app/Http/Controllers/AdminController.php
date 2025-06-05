@@ -229,4 +229,11 @@ class AdminController extends Controller
                     'jumlahDitolak' => $jumlahDitolak
                 ]);
     }
+
+    // pengelolaan kepegawaian
+    public function halamanKelolaPegawai($adminId) {
+        return view('admin.pegawai.pegawai', [
+            'adminId' => $adminId // id admin yang login
+        ]);
+    }
 }

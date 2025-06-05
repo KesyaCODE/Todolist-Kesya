@@ -25,6 +25,7 @@ Route::get('/admin/todo/hapusPenugasan/{id}', [AdminController::class, 'hapusPen
 Route::get('/admin/todo/penugasanSelesai/{id}', [AdminController::class, 'penugasanSelesai']);
 Route::get('/admin/todo/penugasanDitolak/{id}', [AdminController::class, 'penugasanDitolak']);
 Route::get('/admin/todo/rincianPenugasan/{id}', [AdminController::class, 'rincianPenugasan']);
+Route::get('/admin/todo/halamanKelolaPegawai/{adminId}', [AdminController::class, 'halamanKelolaPegawai']);
 
 // route Manajer
 Route::get('/todo/manajer/{id}', [PenggunaController::class, 'manajerLogin']);
