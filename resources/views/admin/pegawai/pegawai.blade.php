@@ -15,7 +15,14 @@
 </head>
 <body>
     <div class="container-lg">
-        <p align="right"><a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/">Keluar</a></p>
+        <p align="right">
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;"  href="/">Keluar</a>
+        </p>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/todo/admin/{{ $adminId }}">
+                Beranda
+            </a>
+            
+        <hr>
         <table class="table table-striped table-hover table-bordered align-middle shadow-sm rounded w-100 mb-4">
             <thead class="table-success text-center">
                 <tr>
@@ -25,7 +32,7 @@
             <tbody class="text-center">
                 <tr>
                     <td>
-                        <a href="/admin/todo/dataPegawai" class="text-decoration-none">
+                        <a href="/admin/todo/dataPegawai/{{ $adminId}}" class="text-decoration-none">
                             Data Pegawai
                         </a>
                     </td>

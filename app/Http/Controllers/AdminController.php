@@ -236,4 +236,14 @@ class AdminController extends Controller
             'adminId' => $adminId // id admin yang login
         ]);
     }
+
+    public function dataPegawai($adminId) {
+        $dataPegawai = DB::table('tb_pegawai')
+                        ->where('jabatan', '!=', "CEO")
+                        ->get();
+        return view('admin.pegawai.dataPegawai', [
+            'dataPegawai' => $dataPegawai,
+            'adminId' => $adminId // id admin yang login
+        ]);
+    }
 }
