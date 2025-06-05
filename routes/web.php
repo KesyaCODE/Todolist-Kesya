@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManajerController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
@@ -24,10 +25,14 @@ Route::get('/admin/todo/penugasanSelesai/{id}', [TodoController::class, 'penugas
 Route::get('/admin/todo/penugasanDitolak/{id}', [TodoController::class, 'penugasanDitolak']);
 Route::get('/admin/todo/rincianPenugasan/{id}', [TodoController::class, 'rincianPenugasan']);
 
+// route Manajer
+Route::get('/manajer/todo/dataPenugasan/{id}', [ManajerController::class, 'dataPenugasan']);
+Route::get('/manajer/todo/rincianPenugasan/{id}', [ManajerController::class, 'rincianPenugasan']);
+
 //route general user
 Route::get('/todo/user/login/{id}', [PenggunaController::class, 'login']);
 
-//route todo
+//route Staff
 Route::get('/todo/mytodo/{id}', [TodoController::class, 'mytodo']);
 Route::get('/todo/detailTugas/{id}/{idPengguna}', [TodoController::class, 'detailTodo']);
 Route::get('/todo/perbaruiTodo/{id}', [TodoController::class, 'perbaruiTodo']);

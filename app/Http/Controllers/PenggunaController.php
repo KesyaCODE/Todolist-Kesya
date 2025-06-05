@@ -56,8 +56,9 @@ class PenggunaController extends Controller
                                 ]);
                             } else if ($detailPegawai->jabatan == 'Manajer') { // bila jabatan Manajer
                                 return view('manajer.beranda', [
-                                    'detailPegawai' => $detailPegawai
-                                ]); 
+                                    'detailManajer' => $detailPegawai
+                                ]);
+
                             } else { // bila jabatan CEO
                                 return view('admin.beranda', [
                                     'detailPegawai' => $detailPegawai
