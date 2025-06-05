@@ -36,12 +36,12 @@
                         </a>
                     </td>
                     <td>
-                        <a class="text-decoration-none" href="/manajer/todo/rincianPenugasan/{{ $detailManajer->id }}">
+                        <a href="/manajer/todo/rincianPenugasan/{{ $detailManajer->id }}" class="text-decoration-none" >
                             Statistik Penugasan
                         </a>
                     </td>
                     <td>
-                        <a href="#" class="text-decoration-none">Data Pegawai</a>
+                        <a href="/manajer/todo/dataPegawai/{{ $detailManajer->id }}" class="text-decoration-none">Data Pegawai</a>
                     </td>
                 </tr>
             </tbody>

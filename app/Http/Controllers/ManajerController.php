@@ -203,4 +203,13 @@ class ManajerController extends Controller
                     'jumlahDitolak' => $jumlahDitolak
                 ]);
     }
+
+    public function dataPegawai($idManajer) {
+        $dataPegawai = DB::table('tb_pegawai')
+                        ->get();
+        return view('manajer.pegawai.dataPegawai', [
+            'dataPegawai' => $dataPegawai,
+            'idManajer' => $idManajer
+        ]);
+    }
 }

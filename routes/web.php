@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManajerController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TodoController;
@@ -15,15 +16,15 @@ Route::post('/auth/pegawai/prosesLogin', [PenggunaController::class, 'prosesLogi
 //route admin user
 Route::get('/todo/admin/{id}', [PenggunaController::class, 'adminLogin']); // masuk halaman admin, tanpa autentikasi
 
-Route::get('/admin/todo/dataPenugasan/{id}', [TodoController::class, 'dataPenugasan']);
-Route::get('/admin/todo/penugasanBaru/{id}', [TodoController::class, 'penugasanBaru']);
-Route::get('/admin/todo/simpanPenugasanBaru', [TodoController::class, 'simpanPenugasanBaru']);
-Route::get('/admin/todo/ubahPenugasan/{id}/{adminId}', [TodoController::class, 'ubahPenugasan']);
-Route::get('/admin/todo/simpanPerubahanPenugasan/{id}/{adminId}', [TodoController::class, 'simpanPembaruanTugas']);
-Route::get('/admin/todo/hapusPenugasan/{id}', [TodoController::class, 'hapusPenugasan']);
-Route::get('/admin/todo/penugasanSelesai/{id}', [TodoController::class, 'penugasanSelesai']);
-Route::get('/admin/todo/penugasanDitolak/{id}', [TodoController::class, 'penugasanDitolak']);
-Route::get('/admin/todo/rincianPenugasan/{id}', [TodoController::class, 'rincianPenugasan']);
+Route::get('/admin/todo/dataPenugasan/{id}', [AdminController::class, 'dataPenugasan']);
+Route::get('/admin/todo/penugasanBaru/{id}', [AdminController::class, 'penugasanBaru']);
+Route::get('/admin/todo/simpanPenugasanBaru', [AdminController::class, 'simpanPenugasanBaru']);
+Route::get('/admin/todo/ubahPenugasan/{id}/{adminId}', [AdminController::class, 'ubahPenugasan']);
+Route::get('/admin/todo/simpanPerubahanPenugasan/{id}/{adminId}', [AdminController::class, 'simpanPembaruanTugas']);
+Route::get('/admin/todo/hapusPenugasan/{id}', [AdminController::class, 'hapusPenugasan']);
+Route::get('/admin/todo/penugasanSelesai/{id}', [AdminController::class, 'penugasanSelesai']);
+Route::get('/admin/todo/penugasanDitolak/{id}', [AdminController::class, 'penugasanDitolak']);
+Route::get('/admin/todo/rincianPenugasan/{id}', [AdminController::class, 'rincianPenugasan']);
 
 // route Manajer
 Route::get('/todo/manajer/{id}', [PenggunaController::class, 'manajerLogin']);
@@ -35,6 +36,7 @@ Route::get('/manajer/todo/penugasanSelesai/{id}', [ManajerController::class, 'pe
 Route::get('/manajer/todo/penugasanDitolak/{id}', [ManajerController::class, 'penugasanDitolak']);
 Route::get('/manajer/todo/ubahPenugasan/{id}/{adminId}', [ManajerController::class, 'ubahPenugasan']);
 Route::get('/manajer/todo/simpanPerubahanPenugasan/{id}/{adminId}', [ManajerController::class, 'simpanPembaruanTugas']);
+Route::get('/manajer/todo/dataPegawai/{idManajer}', [ManajerController::class, 'dataPegawai']);
 
 //route general user
 Route::get('/todo/user/login/{id}', [PenggunaController::class, 'login']);
