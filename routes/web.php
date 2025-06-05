@@ -26,8 +26,12 @@ Route::get('/admin/todo/penugasanDitolak/{id}', [TodoController::class, 'penugas
 Route::get('/admin/todo/rincianPenugasan/{id}', [TodoController::class, 'rincianPenugasan']);
 
 // route Manajer
+Route::get('/todo/manajer/{id}', [PenggunaController::class, 'manajerLogin']);
 Route::get('/manajer/todo/dataPenugasan/{id}', [ManajerController::class, 'dataPenugasan']);
 Route::get('/manajer/todo/rincianPenugasan/{id}', [ManajerController::class, 'rincianPenugasan']);
+Route::get('/manajer/todo/penugasanBaru/{id}', [ManajerController::class, 'penugasanBaru']);
+Route::get('/manajer/todo/penugasanSelesai/{id}', [TodoController::class, 'penugasanSelesai']);
+Route::get('/manajer/todo/penugasanDitolak/{id}', [TodoController::class, 'penugasanDitolak']);
 
 //route general user
 Route::get('/todo/user/login/{id}', [PenggunaController::class, 'login']);

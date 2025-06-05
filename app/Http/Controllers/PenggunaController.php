@@ -32,6 +32,15 @@ class PenggunaController extends Controller
         ]);
     }
 
+    public function manajerLogin($id) {
+        $detailPegawai = DB::table('tb_pegawai')
+                            ->where('id', $id)
+                            ->first();
+        return view('manajer.beranda', [
+           'detailManajer' => $detailPegawai
+        ]);
+    }
+
     public function prosesLogin(Request $request) {
         $user = DB::table('tb_login')
                 ->where('nama_pengguna', $request->userName)
