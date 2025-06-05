@@ -47,7 +47,7 @@
             <tr class="text-nowrap">
                 <td align="center">{{ $loop->iteration }}</td>
                 <td>
-                    <a class="text-decoration-none" href="/admin/todo/ubahPenugasan/{{ $dt->id }}/{{ $adminId }}">
+                    <a class="text-decoration-none" href="/manajer/todo/ubahPenugasan/{{ $dt->id }}/{{ $adminId }}">
                         {{ $dt->tugas }}
                     </a>
                 </td>
@@ -65,7 +65,7 @@
                     @endif
                 </td>
                 <td align="center">
-                    <a class="text-decoration-none" href="/admin/todo/hapusPenugasan/{{ $dt->id }}">
+                    <a class="text-decoration-none" href="/manajer/todo/hapusPenugasan/{{ $dt->id }}">
                         <span class="badge text-bg-danger">Hapus</span>
                     </a>
                 </td>
