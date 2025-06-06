@@ -42,7 +42,10 @@
                         <td>{{ $dp->nama }}</td>
                         <td>{{ $dp->jabatan }}</td>
                         <td>
-                            Perbarui | 
+                            <a href="/admin/todo/pegawai/ubahPegawai/{{ $adminId }}/{{ $dp->id }}" class="text-decoration-none text-primary">
+                                Perbarui
+                            </a>
+                             
                             <a href="/admin/todo/pegawai/hapusPegawai/{{ $adminId }}/{{ $dp->id }}" class="text-decoration-none text-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus pegawai ini?')">
                                 Hapus
                             </a>

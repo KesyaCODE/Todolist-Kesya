@@ -313,4 +313,59 @@ class AdminController extends Controller
             'adminId' => $adminId // id admin yang login
         ]);
     }
+
+    public function ubahPegawai($adminId, $idPegawai) {
+        $pegawai = DB::table('tb_pegawai')
+                    ->where('id', $idPegawai)
+                    ->first();
+        $pegawaiLogin = DB::table('tb_login')
+                    ->where('id', $idPegawai)
+                    ->first();
+
+        return view('admin.pegawai.ubahPegawai', [
+            'pegawai' => $pegawai,
+            'pegawaiLogin' => $pegawaiLogin,
+            'adminId' => $adminId // id admin yang login
+        ]);
+    }
+
+    public function simpanPerubahanPegawai(Request $request, $adminId, $idPegawai) {
+        // update data pegawai
+        DB::table('tb_pegawai')
+            ->where('id', $idPegawai)
+            ->update([
+                'nama' => $request->ubahNamaPegawai,
+                'jabatan' => $request->ubahJabatanPegawai,
+            ]);
+
+        $cek_userlogin = DB::table('tb_login')
+                    ->where('id', $idPegawai)->first();
+
+        if ($cek_userlogin) {
+            // Update jika data sudah ada
+            DB::table('tb_login')
+                ->where('id_pegawai', $idPegawai)
+                ->update([
+                    'nama_pengguna' => $request->ubahNamaPengguna,
+                    'kata_sandi' => $request->ubahKataSandi,
+                ]);
+        } else {
+            // Insert jika data belum ada
+            DB::table('tb_login')->insert([
+                'id' => $idPegawai,
+                'nama_pengguna' => $request->ubahNamaPengguna,
+                'kata_sandi' => $request->ubahKataSandi,
+            ]);
+        }
+
+        // ambil data pegawai keseluruhan
+        $dataPegawai = DB::table('tb_pegawai')
+                        ->where('jabatan', '!=', "CEO")
+                        ->get();
+
+        return redirect('/admin/todo/dataPegawai/' . $adminId)->with([
+            'dataPegawai' => $dataPegawai,
+            'adminId' => $adminId // id admin yang login
+        ]);
+    }
 }

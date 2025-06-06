@@ -31,6 +31,8 @@ Route::get('/admin/todo/dataPegawai/{adminId}', [AdminController::class, 'dataPe
 Route::get('/admin/todo/pegawai/hapusPegawai/{adminId}/{idPegawai}', [AdminController::class, 'hapusPegawai']);
 Route::get('/admin/todo/pegawai/pegawaiBaru/{adminId}', [AdminController::class, 'tambahPegawai']);
 Route::post('/admin/todo/pegawai/simpanPegawaiBaru/{adminId}', [AdminController::class, 'simpanPegawaiBaru']);
+Route::get('/admin/todo/pegawai/ubahPegawai/{adminId}/{idPegawai}', [AdminController::class, 'ubahPegawai']);
+Route::post('/admin/todo/pegawai/simpanPerubahanPegawai/{adminId}/{idPegawai}', [AdminController::class, 'simpanPerubahanPegawai']);
 
 // route Manajer
 Route::get('/todo/manajer/{id}', [PenggunaController::class, 'manajerLogin']);
