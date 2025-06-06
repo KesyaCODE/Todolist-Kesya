@@ -42,7 +42,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="/admin/todo/pegawaiBaru" class="text-decoration-none">Pegawai Baru</a>
+                        <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="text-decoration-none">Pegawai Baru</a>
                     </td>
                 </tr>
             </tbody>

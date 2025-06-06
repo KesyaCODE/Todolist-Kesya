@@ -257,7 +257,7 @@ class AdminController extends Controller
         // hapus data login berdasarkan idPegawai, jika data ada
         if (DB::table('tb_login')->where('id', $idPegawai)->exists()) {
             DB::table('tb_login')
-                ->where('id_pegawai', $idPegawai)
+                ->where('id', $idPegawai)
                 ->delete();
         }
 
@@ -273,6 +273,41 @@ class AdminController extends Controller
                         ->get();
 
         // kembali ke halaman kelola pegawai
+        return redirect('/admin/todo/dataPegawai/' . $adminId)->with([
+            'dataPegawai' => $dataPegawai,
+            'adminId' => $adminId // id admin yang login
+        ]);
+    }
+
+    public function tambahPegawai($adminId) {
+        return view('admin.pegawai.tambahPegawai', [
+            'adminId' => $adminId // id admin yang login
+        ]);
+    }
+
+    public function simpanPegawaiBaru(Request $request, $adminId) {
+        //simpan data pegawai baru
+        DB::table('tb_pegawai')
+            ->insert([
+                'nama' => $request->namaPegawai,
+                'jabatan' => $request->jabatanPegawai,
+            ]);
+
+            // ambil id pegawai yang baru saja ditambahkan
+            $idPegawaiBaru = DB::getPdo()->lastInsertId();
+
+            DB::table('tb_login')
+            ->insert([
+                'id' => $idPegawaiBaru,
+                'nama_pengguna' => $request->namaPengguna,
+                'kata_sandi' => $request->kataSandi,
+            ]);
+
+        // ambil data pegawai keseluruhan
+        $dataPegawai = DB::table('tb_pegawai')
+                        ->where('jabatan', '!=', "CEO")
+                        ->get();
+
         return redirect('/admin/todo/dataPegawai/' . $adminId)->with([
             'dataPegawai' => $dataPegawai,
             'adminId' => $adminId // id admin yang login
