@@ -246,4 +246,36 @@ class AdminController extends Controller
             'adminId' => $adminId // id admin yang login
         ]);
     }
+
+    public function hapusPegawai($adminId, $idPegawai) {
+        // hapus tugas ( todo ) milik idPegawai
+        DB::table('tb_todo')
+            ->where('tugas_untuk', $idPegawai)
+            ->orWhere('tugas_dari', $idPegawai)
+            ->delete();
+        
+        // hapus data login berdasarkan idPegawai, jika data ada
+        if (DB::table('tb_login')->where('id', $idPegawai)->exists()) {
+            DB::table('tb_login')
+                ->where('id_pegawai', $idPegawai)
+                ->delete();
+        }
+
+
+        // hapus pegawai berdasarkan id
+        DB::table('tb_pegawai')
+            ->where('id', $idPegawai)
+            ->delete();
+
+        // ambil data pegawai keseluruhan
+        $dataPegawai = DB::table('tb_pegawai')
+                        ->where('jabatan', '!=', "CEO")
+                        ->get();
+
+        // kembali ke halaman kelola pegawai
+        return redirect('/admin/todo/dataPegawai/' . $adminId)->with([
+            'dataPegawai' => $dataPegawai,
+            'adminId' => $adminId // id admin yang login
+        ]);
+    }
 }

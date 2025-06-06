@@ -14,7 +14,10 @@
                 Beranda
             </a>
             <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}">
-                Kegawaian
+                Beranda Kegawaian
+            </a>
+            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}">
+                Pegawai Baru
             </a>
         <hr>
         @if (count($dataPegawai)<0)
@@ -39,7 +42,10 @@
                         <td>{{ $dp->nama }}</td>
                         <td>{{ $dp->jabatan }}</td>
                         <td>
-                            Perbarui | Hapus
+                            Perbarui | 
+                            <a href="/admin/todo/pegawai/hapusPegawai/{{ $adminId }}/{{ $dp->id }}" class="text-decoration-none text-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus pegawai ini?')">
+                                Hapus
+                            </a>
                         </td>
                     </tr>
                     @endforeach

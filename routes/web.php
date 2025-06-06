@@ -28,6 +28,7 @@ Route::get('/admin/todo/rincianPenugasan/{id}', [AdminController::class, 'rincia
 
 Route::get('/admin/todo/halamanKelolaPegawai/{adminId}', [AdminController::class, 'halamanKelolaPegawai']);
 Route::get('/admin/todo/dataPegawai/{adminId}', [AdminController::class, 'dataPegawai']);
+Route::get('/admin/todo/pegawai/hapusPegawai/{adminId}/{idPegawai}', [AdminController::class, 'hapusPegawai']);
 
 // route Manajer
 Route::get('/todo/manajer/{id}', [PenggunaController::class, 'manajerLogin']);
