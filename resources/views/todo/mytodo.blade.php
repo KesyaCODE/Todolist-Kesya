@@ -12,7 +12,6 @@
     body {
       padding-top: 2rem;
     }
-    /* Optional: atur min-width untuk breadcrumb links agar seragam */
     .breadcrumb-link {
       min-width: 110px;
     }
@@ -48,17 +47,24 @@
     <main>
       <h2 class="text-center fw-bold mb-4">Daftar Tugas Saya</h2>
 
-      @forelse ($daftarTugas as $tugas)
-        <div class="mb-2 d-flex align-items-center">
-          <span class="me-2">{{ $loop->iteration }}.</span>
-          <a href="/todo/detailTugas/{{ $tugas->id }}/{{ $idPengguna }}" 
-             class="link-offset-2 link-underline link-underline-opacity-0">
-            {{ $tugas->tugas }}
-          </a>
-        </div>
-      @empty
+      @if ($daftarTugas->isEmpty())
         <p class="text-center">Tidak ada tugas baru!</p>
-      @endforelse
+      @else
+        <div class="border rounded p-3">
+          @foreach ($daftarTugas as $tugas)
+            <div class="d-flex align-items-center mb-2">
+              <span class="me-2">{{ $loop->iteration }}.</span>
+              <a href="/todo/detailTugas/{{ $tugas->id }}/{{ $idPengguna }}" 
+                 class="link-offset-2 link-underline link-underline-opacity-0">
+                {{ $tugas->tugas }}
+              </a>
+            </div>
+            @if (!$loop->last)
+              <hr class="my-2" />
+            @endif
+          @endforeach
+        </div>
+      @endif
     </main>
   </div>
 

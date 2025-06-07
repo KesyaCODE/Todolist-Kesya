@@ -21,7 +21,7 @@
       <ol class="breadcrumb mb-3" style="--bs-breadcrumb-divider: '';">
         <li class="breadcrumb-item">
           <a href="/todo/user/login/{{ $idPengguna }}" 
-             class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center breadcrumb-link">
+             class="d-inline-block text-decoration-none border border-success btn btn-outline-success rounded px-2 py-1 fs-7 text-center breadcrumb-link">
             < Informasi Penugasan
           </a>
         </li>

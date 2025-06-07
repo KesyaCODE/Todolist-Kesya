@@ -38,13 +38,14 @@
 </head>
 <body>
   <div class="container">
-    <!-- Tombol Keluar -->
-    <div class="text-end mb-3">
-      <a href="/todo/mytodo/profilPengguna/{{ $detailPegawai->id }}" class="btn btn-outline-success btn-sm rounded-pill">
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <a href="/todo/mytodo/profilPengguna/{{ $detailPegawai->id }}" 
+         class="btn btn-outline-success btn-sm rounded-pill me-2">
         {{ $detailPegawai->nama }}
       </a>
       <a href="/" class="btn btn-outline-secondary btn-sm rounded-pill">Keluar</a>
     </div>
+
 
     <!-- Selamat Datang -->
     <h4 class="mb-0">Selamat Datang, <b>{{ $detailPegawai->nama }}</b>!</h4>
