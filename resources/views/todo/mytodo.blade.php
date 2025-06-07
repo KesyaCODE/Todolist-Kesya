@@ -18,23 +18,23 @@
 <body>
     <div class="container-sm">
         <nav style="--bs-breadcrumb-divider: ''; padding-left: 20px;" aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-2 py-1 text-sm" href="/todo/user/login/{{ $idPengguna }}">
-                Beranda
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-2 py-1 text-sm" href="/todo/mytodo/selesai/{{ $idPengguna }}">
-                Tugas Selesai
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-2 py-1 text-sm" href="/todo/mytodo/ditolak/{{ $idPengguna }}">
-                Tugas Ditolak
-            </a>
-        </li>
-    </ol>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center" style="min-width: 110px;" href="/todo/user/login/{{ $idPengguna }}">
+                        Beranda
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center" style="min-width: 110px;" href="/todo/mytodo/selesai/{{ $idPengguna }}">
+                        Tugas Selesai
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center" style="min-width: 110px;" href="/todo/mytodo/ditolak/{{ $idPengguna }}">
+                        Tugas Ditolak
+                    </a>
+                </li>
+            </ol>
     </nav>
     <hr>
     <center>
