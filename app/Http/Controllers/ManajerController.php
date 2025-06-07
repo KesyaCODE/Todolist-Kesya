@@ -212,4 +212,17 @@ class ManajerController extends Controller
             'idManajer' => $idManajer
         ]);
     }
+
+    public function profilManajer($idUser) {
+        $profil = DB::table('tb_pegawai')
+                    ->join('tb_login', 'tb_login.id', '=','tb_pegawai.id')
+                    ->where('tb_pegawai.id', $idUser)
+                    ->select('tb_login.*', 'tb_pegawai.*')
+                    ->first();
+                    // dd($profil);
+        return view('manajer.profilUser.profilUser', [
+            'profilPengguna' => $profil,
+            'idPengguna' => $idUser
+        ]);
+    }
 }

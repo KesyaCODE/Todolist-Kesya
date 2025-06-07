@@ -20,8 +20,7 @@
     <nav aria-label="breadcrumb" class="ps-3">
       <ol class="breadcrumb mb-3" style="--bs-breadcrumb-divider: '';">
         <li class="breadcrumb-item">
-          <a href="/todo/admin/{{ $idPengguna }}" 
-             class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center breadcrumb-link">
+          <a href="/todo/manajer/{{ $idPengguna }}" class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center breadcrumb-link">
             < Kembali
           </a>
         </li>

@@ -48,6 +48,8 @@ Route::get('/manajer/todo/ubahPenugasan/{id}/{adminId}', [ManajerController::cla
 Route::get('/manajer/todo/simpanPerubahanPenugasan/{id}/{adminId}', [ManajerController::class, 'simpanPembaruanTugas']);
 Route::get('/manajer/todo/dataPegawai/{idManajer}', [ManajerController::class, 'dataPegawai']);
 
+Route::get('/manajer/todo/profilManajer/{idUser}', [ManajerController::class, 'profilManajer']);
+
 //route general user
 Route::get('/todo/user/login/{id}', [PenggunaController::class, 'login']);
 
