@@ -15,7 +15,7 @@
 <body>
   <div class="container-lg">
 
-    <div class="mb-3 d-flex flex-wrap gap-2 justify-content-center">
+    {{-- <div class="mb-3 d-flex flex-wrap gap-2 justify-content-center">
       <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded" style="width: 180px;">
         Beranda
       </a>
@@ -26,6 +26,20 @@
         Tugas Selesai
       </a>
       <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary rounded" style="width: 180px;">
+        Tugas Ditolak
+      </a>
+    </div> --}}
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Beranda
+      </a>
+      <a href="/admin/todo/penugasanBaru/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Penugasan Baru
+      </a>
+      <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Tugas Selesai
+      </a>
+      <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
         Tugas Ditolak
       </a>
     </div>

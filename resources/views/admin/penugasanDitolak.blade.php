@@ -29,12 +29,25 @@
 </head>
 <body>
   <div class="container-md">
-
-    <div class="d-flex flex-wrap btn-group">
+    {{-- <div class="d-flex flex-wrap btn-group">
       <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center">Beranda</a>
       <a href="/admin/todo/penugasanBaru/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center">Penugasan Baru</a>
       <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center">Tugas Selesai</a>
       <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center active" aria-current="page">Tugas Ditolak</a>
+    </div> --}}
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Beranda
+      </a>
+      <a href="/admin/todo/penugasanBaru/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Penugasan Baru
+      </a>
+      <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Tugas Selesai
+      </a>
+      <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Tugas Ditolak
+      </a>
     </div>
 
     <hr />

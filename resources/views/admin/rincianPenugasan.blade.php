@@ -33,9 +33,24 @@
   <div class="container-md">
 
     <!-- Tombol Beranda -->
-    <div class="mb-4">
+    {{-- <div class="mb-4">
       <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill px-4">Beranda</a>
+    </div> --}}
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Beranda
+      </a>
+      <a href="/admin/todo/penugasanBaru/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Penugasan Baru
+      </a>
+      <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Tugas Selesai
+      </a>
+      <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+        Tugas Ditolak
+      </a>
     </div>
+    <hr>
 
     <!-- Kartu Rincian ToDo -->
     <div class="card mb-4">
