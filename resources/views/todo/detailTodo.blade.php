@@ -41,43 +41,51 @@
 
     <!-- Detail Card -->
     @foreach ($detailTodo as $detail)
-    <div class="card shadow-sm mb-4">
-      <div class="card-header bg-primary text-white text-center fw-bold">
-        Detail Tugas
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white text-center fw-bold">
+          Detail Tugas
+        </div>
+        <div class="card-body">
+          <form action="/todo/perbaruiTodo/{{ $detail->id }}/{{ $idPengguna }}" method="POST">
+            @csrf
+            @method('POST')
+
+            <div class="mb-3">
+              <label class="form-label">Nama Tugas</label>
+              <input type="text" class="form-control" value="{{ $detail->tugas }}" readonly>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Waktu Mulai</label>
+              <input type="text" class="form-control" value="{{ $detail->waktu_mulai }}" readonly>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Waktu Selesai</label>
+              <input type="text" class="form-control" value="{{ $detail->waktu_selesai }}" readonly>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Penugasan Oleh</label>
+              <input type="text" class="form-control" value="{{ $detail->pemberi_tugas }}" readonly>
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Status</label>
+              @php
+                $opsi = ['Dikerjakan', 'Ditolak', 'Selesai'];
+              @endphp
+              <select class="form-select" name="statusPekerjaan">
+                @foreach ($opsi as $status)
+                  <option value="{{ $status }}" {{ $detail->keterangan == $status ? 'selected' : '' }}>
+                    {{ $status }}
+                  </option>
+                @endforeach
+              </select>
+            </div>
+            <div class="text-end">
+              <button type="submit" class="btn btn-success">Perbarui</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="card-body">
-        <form action="/todo/perbaruiTodo/{{ $detail->id }}" method="get">
-          <div class="mb-3">
-            <label class="form-label">Nama Tugas</label>
-            <input type="text" class="form-control" value="{{ $detail->tugas }}" readonly>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Waktu Mulai</label>
-            <input type="text" class="form-control" value="{{ $detail->waktu_mulai }}" readonly>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Waktu Selesai</label>
-            <input type="text" class="form-control" value="{{ $detail->waktu_selesai }}" readonly>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Penugasan Oleh</label>
-            <input type="text" class="form-control" value="{{ $detail->pemberi_tugas }}" readonly>
-          </div>
-          <div class="mb-4">
-            <label class="form-label">Status</label>
-            <select class="form-select" name="statusPekerjaan">
-              <option value="{{ $detail->keterangan }}"> {{ $detail->keterangan }}</option>
-              <option value="Dikerjakan">Dikerjakan</option>
-              <option value="Ditolak">Ditolak</option>
-              <option value="Selesai">Selesai</option>
-            </select>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn btn-success">Perbarui</button>
-          </div>
-        </form>
-      </div>
-    </div>
+    @endforeach
   </div>
 </body>
 </html>

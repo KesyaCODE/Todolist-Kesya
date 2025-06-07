@@ -43,7 +43,7 @@ class TodoController extends Controller
         ]);
     }
 
-    public function perbaruiTodo(Request $request, $id) {
+    public function perbaruiTodo(Request $request, $id, $idPengguna) {
         //update status dalam tb_todo
         //kemudian simpan pembaruan data dalam tb_hasiltodo
         DB::table('tb_todo')
@@ -55,7 +55,8 @@ class TodoController extends Controller
             ->where('keterangan', 'Ditugaskan')
             ->get();
             return view('todo.mytodo', [
-                'daftarTugas' => $todo
+                'daftarTugas' => $todo,
+                'idPengguna' => $idPengguna
             ]);
         
     }
