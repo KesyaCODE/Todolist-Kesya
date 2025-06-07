@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <!-- menambahkan bootstrap -->
-        <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tugas Ditolak</title>
 
-    <style>
-    /* Menambahkan margin atau padding pada body */
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
     body {
-        padding-top: 30px; /* Menambahkan jarak atas */
+      padding-top: 2rem;
     }
-    </style>
+    .breadcrumb-link {
+      min-width: 110px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container-sm">
-        <nav style="--bs-breadcrumb-divider: ''; padding-left: 20px;" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center" style="min-width: 110px;" href="/todo/user/login/{{ $idPengguna }}">
-                    Beranda
-                </a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-                <a class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center" style="min-width: 110px;" href="/todo/mytodo/{{ $idPengguna }}">
-                    Daftar Tugas
-                </a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-                <a class="d-inline-block text-decoration-none border border-primary rounded px-2 py-1 fs-7 text-center" style="min-width: 110px;" href="/todo/mytodo/selesai/{{ $idPengguna }}">
-                    Tugas Selesai
-                </a>
-            </li>
-        </ol>
+  <div class="container-sm">
+    <nav aria-label="breadcrumb" class="ps-3 mb-3">
+      <ol class="breadcrumb" style="--bs-breadcrumb-divider: '›';">
+        <li class="breadcrumb-item">
+          <a href="/todo/user/login/{{ $idPengguna }}" 
+             class="btn btn-outline-primary btn-sm breadcrumb-link">
+            Beranda
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <span class="btn btn-primary btn-sm disabled breadcrumb-link">Daftar Tugas</span>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/todo/mytodo/selesai/{{ $idPengguna }}" 
+             class="btn btn-outline-primary btn-sm breadcrumb-link">
+            Tugas Selesai
+          </a>
+        </li>
+      </ol>
     </nav>
-<hr>
-    <center>
-        <b>
-            Tugas Tidak Dikerjakan
-        </b>
-    </center>
-    @if (count($todoDitolak)>0)
-        <table border="1" align="center" class="table table-bordered">
+
+    <hr />
+
+    <h2 class="text-center fw-bold mb-4">Tugas Tidak Dikerjakan</h2>
+
+    @if (count($todoDitolak) > 0)
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle text-center">
+          <thead class="table-light">
             <tr>
-                <td>No.</td>
-                <td>Nama Tugas</td>
-                <td>Tugas Dimulai</td>
-                <td>Selesai</td>
-                <td>Status</td>
+              <th>No.</th>
+              <th>Nama Tugas</th>
+              <th>Tugas Dimulai</th>
+              <th>Selesai</th>
+              <th>Status</th>
             </tr>
-            @foreach ( $todoDitolak as $ts )
-            <tr>
+          </thead>
+          <tbody>
+            @foreach ($todoDitolak as $ts)
+              <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $ts->tugas }}</td>
+                <td class="text-start">{{ $ts->tugas }}</td>
                 <td>{{ $ts->waktu_mulai }}</td>
                 <td>{{ $ts->waktu_selesai }}</td>
-                <td><b><font color="red">{{ $ts->keterangan }}</font></b></td>
-            </tr>
+                <td class="text-danger fw-bold">{{ $ts->keterangan }}</td>
+              </tr>
             @endforeach
+          </tbody>
         </table>
+      </div>
     @else
-        <center>Tidak ditemukan data!</center>
+      <p class="text-center fst-italic">Tidak ditemukan data!</p>
     @endif
-    </div>
+  </div>
+
+  <!-- Optional Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
