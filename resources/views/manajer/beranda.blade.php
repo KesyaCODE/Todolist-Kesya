@@ -49,6 +49,13 @@
                         <a href="/manajer/todo/dataPegawai/{{ $detailManajer->id }}" class="text-decoration-none">Data Pegawai</a>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="3">
+                        <a href="/manajer/todo/tugasSaya/{{ $detailManajer->id }}" class="text-decoration-none">
+                            Tugas Saya
+                        </a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

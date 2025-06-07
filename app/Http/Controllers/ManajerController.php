@@ -25,6 +25,7 @@ class ManajerController extends Controller
               ->select('tb_todo.*',
                 'pemberi.nama as nama_pemberi',
                 'penerima.nama as nama_penerima')
+                ->where('tugas_untuk', '!=', $id)
                 ->get();
             
         return view('manajer.dataPenugasan', [
@@ -141,6 +142,22 @@ class ManajerController extends Controller
             'delegator' => $delegator,
             'pelaksana' => $pelaksana,
             'adminId' => $adminId // id admin yang login
+        ]);
+    }
+
+    public function tugasSaya($id) {
+        $todoSaya = DB::table('tb_todo')
+                    ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
+                    ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
+                    ->select('tb_todo.*',
+                        'pemberi.nama as nama_pemberi',
+                        'penerima.nama as nama_penerima')
+                        ->where('tugas_untuk', '==', 1)
+                        ->get();
+        // dd($todoSaya); 
+        return view('manajer.tugasSaya', [
+            'tugasSaya' => $todoSaya,
+            'adminId' => $id // id admin yang login
         ]);
     }
 

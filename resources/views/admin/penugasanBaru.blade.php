@@ -87,7 +87,7 @@
           <select id="pemberiTugas" name="pemberiTugas" class="form-select" required>
             <option value="" disabled selected>Pilih delegator</option>
             @foreach ($namaDelegator as $nd)
-            <option value="{{ $nd->id }}">{{ $nd->nama }}</option>
+            <option value="{{ $nd->id }}" {{ $nd->id == $adminId ? 'selected' : '' }}>{{ $nd->nama }}</option>
             @endforeach
           </select>
           <div class="invalid-feedback">Delegator wajib dipilih.</div>
