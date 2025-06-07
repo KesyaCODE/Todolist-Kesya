@@ -40,7 +40,10 @@
   <div class="container">
     <!-- Tombol Keluar -->
     <div class="text-end mb-3">
-      <a href="/" class="btn btn-outline-primary btn-sm rounded-pill">Keluar</a>
+      <a href="/todo/mytodo/profilPengguna/{{ $detailPegawai->id }}" class="btn btn-outline-success btn-sm rounded-pill">
+        {{ $detailPegawai->nama }}
+      </a>
+      <a href="/" class="btn btn-outline-secondary btn-sm rounded-pill">Keluar</a>
     </div>
 
     <!-- Selamat Datang -->

@@ -56,3 +56,4 @@ Route::get('/todo/perbaruiTodo/{id}', [TodoController::class, 'perbaruiTodo']);
 
 Route::get('/todo/mytodo/selesai/{id}', [TodoController::class, 'todoSelesai']);
 Route::get('/todo/mytodo/ditolak/{id}', [TodoController::class, 'todoDitolak']);
+Route::get('/todo/mytodo/profilPengguna/{idUser}', [TodoController::class, 'profilPengguna']);

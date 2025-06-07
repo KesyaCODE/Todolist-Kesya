@@ -66,7 +66,7 @@
           <div class="mb-4">
             <label class="form-label">Status</label>
             <select class="form-select" name="statusPekerjaan">
-              <option value="{{ $detail->keterangan }}" selected>{{ $detail->keterangan }}</option>
+              <option value="{{ $detail->keterangan }}"> {{ $detail->keterangan }}</option>
               <option value="Dikerjakan">Dikerjakan</option>
               <option value="Ditolak">Ditolak</option>
               <option value="Selesai">Selesai</option>
@@ -77,3 +77,7 @@
           </div>
         </form>
       </div>
+    </div>
+  </div>
+</body>
+</html>
