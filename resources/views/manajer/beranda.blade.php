@@ -16,7 +16,8 @@
 <body>
     <div class="container-lg">
         <p align="right">
-            <a href="/manajer/todo/profilManajer/{{ $detailManajer->id }}">{{ $detailManajer->nama }}</a><a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/">
+            <a href="/manajer/todo/profilManajer/{{ $detailManajer->id }}">{{ $detailManajer->nama }}</a>
+            <a class="link-offset-2 link-underline link-underline-opacity-0 border border-primary rounded px-3 py-2" href="/">
                 Keluar
             </a>
         </p>
