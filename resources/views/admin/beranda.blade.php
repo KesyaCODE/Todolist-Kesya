@@ -77,7 +77,7 @@
   <div class="container-lg">
 
     <nav class="navbar-custom">
-      <a href="/" aria-label="Keluar dari aplikasi">Keluar</a>
+      <a href="/admin/todo/profilAdmin/{{ $detailPegawai->id }}">{{ $detailPegawai->nama }}</a><a href="/" aria-label="Keluar dari aplikasi">Keluar</a>
     </nav>
 
     <p class="welcome-text">Selamat Datang, <span>{{ $detailPegawai->nama }}</span>!</p>

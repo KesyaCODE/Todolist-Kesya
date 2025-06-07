@@ -34,6 +34,8 @@ Route::post('/admin/todo/pegawai/simpanPegawaiBaru/{adminId}', [AdminController:
 Route::get('/admin/todo/pegawai/ubahPegawai/{adminId}/{idPegawai}', [AdminController::class, 'ubahPegawai']);
 Route::post('/admin/todo/pegawai/simpanPerubahanPegawai/{adminId}/{idPegawai}', [AdminController::class, 'simpanPerubahanPegawai']);
 
+Route::get('/admin/todo/profilAdmin/{idUser}', [AdminController::class, 'profilAdmin']);
+
 // route Manajer
 Route::get('/todo/manajer/{id}', [PenggunaController::class, 'manajerLogin']);
 Route::get('/manajer/todo/dataPenugasan/{id}', [ManajerController::class, 'dataPenugasan']);

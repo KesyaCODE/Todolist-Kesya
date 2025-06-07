@@ -369,4 +369,17 @@ class AdminController extends Controller
             'adminId' => $adminId // id admin yang login
         ]);
     }
+
+public function profilAdmin($idUser) {
+        $profil = DB::table('tb_pegawai')
+                    ->join('tb_login', 'tb_login.id', '=','tb_pegawai.id')
+                    ->where('tb_pegawai.id', $idUser)
+                    ->select('tb_login.*', 'tb_pegawai.*')
+                    ->first();
+                    // dd($profil);
+        return view('admin.profilUser.profilUser', [
+            'profilPengguna' => $profil,
+            'idPengguna' => $idUser
+        ]);
+    }
 }
