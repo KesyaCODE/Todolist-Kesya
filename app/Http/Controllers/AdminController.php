@@ -53,7 +53,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function simpanPenugasanBaru(Request $request) {
+    public function simpanPenugasanBaru(Request $request, $adminId) {
         //simpan data
         DB::table('tb_todo')
             ->insert([
@@ -78,7 +78,8 @@ class AdminController extends Controller
                 'penerima.nama as nama_penerima')
                 ->get();
         return view('admin.dataPenugasan', [
-            'dataTodo' => $semuaTodo
+            'dataTodo' => $semuaTodo,
+            'adminId' => $adminId // id admin yang login
         ]);
     }
 

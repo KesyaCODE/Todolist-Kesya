@@ -28,7 +28,7 @@
                 Tugas Ditolak
             </a> 
         <hr>
-        <form action="/admin/todo/simpanPenugasanBaru" method="get" class="form-inline">
+        <form action="/admin/todo/simpanPenugasanBaru/{{ $adminId }}" method="get" class="form-inline">
             <table>
                 <tr>
                     <td>Nama Tugas</td>
