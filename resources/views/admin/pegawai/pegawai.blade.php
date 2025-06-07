@@ -32,7 +32,7 @@
 
     <!-- Tombol keluar dan beranda -->
     <div class="d-flex justify-content-between mb-3">
-      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill btn-custom">Beranda</a>
+      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">Beranda</a>
       <a href="/" class="btn btn-outline-danger rounded-pill btn-custom">Keluar</a>
     </div>
 

@@ -27,14 +27,18 @@
 
     <!-- Tombol Navigasi -->
     <div class="d-flex flex-wrap gap-2 mb-4">
-      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill btn-sm btn-nav">Beranda</a>
-      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-secondary rounded-pill btn-sm btn-nav">Halaman Kepegawaian</a>
-      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-sm btn-nav">Pegawai Baru</a>
+      {{-- <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill btn-sm btn-nav">Beranda</a> --}}
+      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
+        Beranda Kepegawaian
+      </a>
+      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
+        Pegawai Baru
+      </a>
     </div>
 
     <!-- Form Tambah Pegawai -->
     <div class="card">
-      <div class="card-header bg-primary text-white fw-bold text-center">
+      <div class="card-header bg-success text-white fw-bold text-center">
         Tambah Pegawai Baru
       </div>
       <div class="card-body">
@@ -65,7 +69,7 @@
           </div>
 
           <div class="text-end">
-            <button type="submit" class="btn btn-primary rounded-pill px-4">Simpan</button>
+            <button type="submit" class="btn btn-success rounded-pill px-4">Simpan</button>
           </div>
         </form>
       </div>

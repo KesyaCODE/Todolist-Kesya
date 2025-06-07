@@ -31,14 +31,18 @@
 
     <!-- Tombol Navigasi -->
     <div class="d-flex flex-nowrap overflow-auto gap-2 mb-4 pb-2">
-      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill btn-custom">Beranda</a>
-      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-secondary rounded-pill btn-custom">Halaman Kepegawaian</a>
-      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">Pegawai Baru</a>
+      {{-- <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill btn-custom">Beranda</a> --}}
+      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
+        Beranda Kepegawaian
+      </a>
+      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
+        Pegawai Baru
+      </a>
     </div>
 
     <!-- Data Pegawai -->
     <div class="card">
-      <div class="card-header bg-primary text-white text-center fw-bold">
+      <div class="card-header bg-success text-white text-center fw-bold">
         Data Pegawai
       </div>
       <div class="card-body p-0">
@@ -49,7 +53,7 @@
         @else
           <div class="table-responsive">
             <table class="table table-bordered table-hover align-middle mb-0">
-              <thead class="table-primary text-center text-nowrap">
+              <thead class="table-success text-center text-nowrap">
                 <tr>
                   <th>No.</th>
                   <th>Nama</th>
