@@ -1,61 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Pegawai</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Pegawai</title>
 
-    <link rel="stylesheet" href="/assets/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="/assets/bootstrap.css" />
+  <style>
+    body {
+      padding-top: 30px;
+      background-color: #f8f9fa;
+    }
+    .btn-custom {
+      min-width: 160px;
+    }
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    }
+    table td, table th {
+      vertical-align: middle !important;
+    }
+    .table td .btn {
+      min-width: 100px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container-lg">
-        <br>
-            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/todo/admin/{{ $adminId }}">
-                Beranda
-            </a>
-            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}">
-                Beranda Kegawaian
-            </a>
-            <a class="btn btn-outline-primary btn-sm rounded text-center" style="width: 140px;" href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}">
-                Pegawai Baru
-            </a>
-        <hr>
-        @if (count($dataPegawai)<0)
-            <center>
-                Tidak ada todo!
-            </center>
-        @else
-        <div class="table-responsive">
-            <table class="table table-sm table-striped table-hover table-bordered align-middle shadow-sm rounded small">
-                <thead class="table-primary">
-                    <tr class="text-nowrap">
-                        <th>No.</th>
-                        <th>Nama</th>
-                        <th>Jabatan</th>
-                        <th>Ket.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ( $dataPegawai as $dp )
-                    <tr class="text-nowrap">
-                        <td align="center">{{ $loop->iteration }}</td>
-                        <td>{{ $dp->nama }}</td>
-                        <td>{{ $dp->jabatan }}</td>
-                        <td>
-                            <a href="/admin/todo/pegawai/ubahPegawai/{{ $adminId }}/{{ $dp->id }}" class="text-decoration-none text-primary">
-                                Perbarui
-                            </a>
-                             
-                            <a href="/admin/todo/pegawai/hapusPegawai/{{ $adminId }}/{{ $dp->id }}" class="text-decoration-none text-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus pegawai ini?')">
-                                Hapus
-                            </a>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-        @endif
+  <div class="container-lg">
+
+    <!-- Tombol Navigasi -->
+    <div class="d-flex flex-nowrap overflow-auto gap-2 mb-4 pb-2">
+      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill btn-custom">Beranda</a>
+      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-secondary rounded-pill btn-custom">Halaman Kepegawaian</a>
+      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">Pegawai Baru</a>
     </div>
+
+    <!-- Data Pegawai -->
+    <div class="card">
+      <div class="card-header bg-primary text-white text-center fw-bold">
+        Data Pegawai
+      </div>
+      <div class="card-body p-0">
+        @if (count($dataPegawai) < 1)
+          <div class="p-4 text-center text-muted">
+            <em>Tidak ada data pegawai.</em>
+          </div>
+        @else
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle mb-0">
+              <thead class="table-primary text-center text-nowrap">
+                <tr>
+                  <th>No.</th>
+                  <th>Nama</th>
+                  <th>Jabatan</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($dataPegawai as $dp)
+                  <tr class="text-nowrap">
+                    <td class="text-center">{{ $loop->iteration }}</td>
+                    <td>{{ $dp->nama }}</td>
+                    <td>{{ $dp->jabatan }}</td>
+                    <td class="text-center">
+                      <div class="d-flex justify-content-center flex-wrap gap-2">
+                        <a href="/admin/todo/pegawai/ubahPegawai/{{ $adminId }}/{{ $dp->id }}"
+                           class="btn btn-sm btn-outline-primary rounded-pill">
+                          Perbarui
+                        </a>
+                        <a href="/admin/todo/pegawai/hapusPegawai/{{ $adminId }}/{{ $dp->id }}"
+                           class="btn btn-sm btn-outline-danger rounded-pill"
+                           onclick="return confirm('Apakah Anda yakin ingin menghapus pegawai ini?')">
+                          Hapus
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        @endif
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
