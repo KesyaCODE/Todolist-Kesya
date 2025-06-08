@@ -83,14 +83,17 @@
                     <td>{{ $dp->jabatan }}</td>
                     <td class="text-center">
                       <div class="d-flex justify-content-center flex-wrap gap-2">
+                        <a href="" class="text-decoration-none border-top border-bottom border-secondary py-1 px-2 d-inline-block">
+                          📄
+                        </a>
                         <a href="/admin/todo/pegawai/ubahPegawai/{{ $adminId }}/{{ $dp->id }}"
-                           class="btn btn-sm btn-outline-primary rounded-pill">
-                          ✏️ Perbarui
+                           class="text-decoration-none border-top border-bottom border-secondary py-1 px-2 d-inline-block">
+                          ✏️
                         </a>
                         <a href="/admin/todo/pegawai/hapusPegawai/{{ $adminId }}/{{ $dp->id }}"
-                           class="btn btn-sm btn-outline-danger rounded-pill"
+                           class="text-decoration-none border-top border-bottom border-secondary py-1 px-2 d-inline-block"
                            onclick="return confirm('Apakah Anda yakin ingin menghapus pegawai ini?')">
-                          🗑️ Hapus
+                          🗑️
                         </a>
                       </div>
                     </td>
