@@ -11,7 +11,10 @@
       padding-top: 30px;
     }
     .btn-nav {
-      width: 160px;
+      min-width: 180px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 500;
     }
     .card {
       border-radius: 15px;
@@ -27,12 +30,11 @@
 
     <!-- Navigasi -->
     <div class="d-flex flex-wrap gap-2 mb-4">
-      {{-- <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded-pill btn-nav">Beranda</a> --}}
-      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
-        Halaman Kepegawaian
+      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-nav">
+        🔙 Kembali ke Kepegawaian
       </a>
-      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
-        Pegawai Baru
+      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-nav">
+        ➕ Tambah Pegawai Baru
       </a>
     </div>
 
@@ -53,7 +55,7 @@
           </div>
 
           <div class="mb-3 row">
-            <label for="ubahNamaPegawai" class="col-sm-3 col-form-label">Nama Pegawai</label>
+            <label for="ubahNamaPegawai" class="col-sm-3 col-form-label">Nama Lengkap</label>
             <div class="col-sm-9">
               <input type="text" id="ubahNamaPegawai" name="ubahNamaPegawai" class="form-control" value="{{ $pegawai->nama }}" required>
             </div>
@@ -88,7 +90,9 @@
           </div>
 
           <div class="text-end">
-            <button type="submit" class="btn btn-success px-4 rounded-pill">Simpan Pembaruan</button>
+            <button type="submit" class="btn btn-success px-4 rounded-pill">
+              💾 Simpan Pembaruan
+            </button>
           </div>
         </form>
       </div>

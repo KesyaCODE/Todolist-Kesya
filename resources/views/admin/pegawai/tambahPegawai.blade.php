@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pegawai Baru</title>
+  <title>Form Pegawai Baru</title>
   <link rel="stylesheet" href="/assets/bootstrap.css" />
   <style>
     body {
       background-color: #f8f9fa;
       padding-top: 30px;
     }
+
     .btn-nav {
-      width: 160px;
+      min-width: 180px;
+      text-align: center;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
     }
+
     .card {
       border-radius: 15px;
       box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
     }
+
     .form-label {
       font-weight: 500;
     }
@@ -27,19 +34,18 @@
 
     <!-- Tombol Navigasi -->
     <div class="d-flex flex-wrap gap-2 mb-4">
-      {{-- <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded-pill btn-sm btn-nav">Beranda</a> --}}
-      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
-        Beranda Kepegawaian
+      <a href="/admin/todo/halamanKelolaPegawai/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-nav">
+        🔙 Kembali ke Kepegawaian
       </a>
-      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-custom">
-        Pegawai Baru
+      <a href="/admin/todo/pegawai/pegawaiBaru/{{ $adminId }}" class="btn btn-outline-success rounded-pill btn-nav">
+        ➕ Tambah Pegawai Baru
       </a>
     </div>
 
     <!-- Form Tambah Pegawai -->
     <div class="card">
       <div class="card-header bg-success text-white fw-bold text-center">
-        Tambah Pegawai Baru
+        Formulir Tambah Pegawai
       </div>
       <div class="card-body">
         <form action="/admin/todo/pegawai/simpanPegawaiBaru/{{ $adminId }}" method="post">
@@ -69,7 +75,7 @@
           </div>
 
           <div class="text-end">
-            <button type="submit" class="btn btn-success rounded-pill px-4">Simpan</button>
+            <button type="submit" class="btn btn-success rounded-pill px-4">💾 Simpan Pegawai</button>
           </div>
         </form>
       </div>
