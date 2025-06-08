@@ -49,6 +49,17 @@
     hr {
       border-top: 1px solid #dee2e6;
     }
+  .tugas-item:hover {
+    background-color: #e0f0ff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+  }
+
+  /* Responsive text ellipsis */
+  .text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   </style>
 </head>
 <body>
@@ -58,6 +69,9 @@
       <ol class="breadcrumb" style="--bs-breadcrumb-divider: '›'; font-size: 0.9rem;">
         <li class="breadcrumb-item">
           <a href="/todo/user/login/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Beranda</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/todo/mytodo/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Penugasan</a>
         </li>
         <li class="breadcrumb-item">
           <a href="/todo/mytodo/selesai/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Tugas Selesai</a>
@@ -71,27 +85,31 @@
     <hr />
 
     <!-- Judul -->
-    <main>
-      <h4 class="text-center fw-semibold mb-4">Daftar Tugas Saya</h4>
+<main class="container py-4" style="max-width: 600px;">
+  <h4 class="text-center fw-bold mb-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    Daftar Tugas Saya
+  </h4>
 
-      @if ($daftarTugas->isEmpty())
-        <p class="text-center text-muted">Tidak ada tugas baru.</p>
-      @else
-        <div class="tugas-wrapper">
-          @foreach ($daftarTugas as $tugas)
-            <div class="d-flex tugas-item align-items-center mb-2">
-              <span class="me-2 text-secondary">{{ $loop->iteration }}.</span>
-              <a href="/todo/detailTugas/{{ $tugas->id }}/{{ $idPengguna }}">
-                {{ $tugas->tugas }}
-              </a>
-            </div>
-            @if (!$loop->last)
-              <hr class="my-2" />
-            @endif
-          @endforeach
-        </div>
-      @endif
-    </main>
+  @if ($daftarTugas->isEmpty())
+    <p class="text-center text-muted fst-italic">Tidak ada tugas baru.</p>
+  @else
+    <div class="tugas-wrapper d-flex flex-column gap-3">
+      @foreach ($daftarTugas as $tugas)
+        <a href="/todo/detailTugas/{{ $tugas->id }}/{{ $idPengguna }}" 
+           class="tugas-item d-flex align-items-center p-3 rounded shadow-sm text-decoration-none"
+           style="background-color: #f9f9f9; transition: background-color 0.3s, box-shadow 0.3s;">
+          <div class="badge bg-primary rounded-circle me-3 d-flex justify-content-center align-items-center"
+               style="width: 32px; height: 32px; font-weight: 600; font-size: 1rem; color: white;">
+            {{ $loop->iteration }}
+          </div>
+          <div class="text-truncate" style="font-size: 1.1rem; color: #333;">
+            {{ $tugas->tugas }}
+          </div>
+        </a>
+      @endforeach
+    </div>
+  @endif
+</main>
   </div>
 
   <!-- Bootstrap JS Bundle -->

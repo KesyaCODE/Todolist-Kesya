@@ -31,6 +31,9 @@
           <a href="/todo/user/login/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Beranda</a>
         </li>
         <li class="breadcrumb-item">
+          <a href="/todo/mytodo/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Penugasan</a>
+        </li>
+        <li class="breadcrumb-item">
           <a href="/todo/mytodo/selesai/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Tugas Selesai</a>
         </li>
         <li class="breadcrumb-item">

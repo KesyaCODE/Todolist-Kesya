@@ -24,7 +24,7 @@
         <!-- menampilkan nama admin yang log in -->
         Selamat Datang, <b>{{ $detailManajer->nama }}!</b><br> 
         <font size="2" class="text-secondary">
-            {{ $detailManajer->jabatan }}
+            Nama Perusahaan | {{ $detailManajer->jabatan }}
         </font>
         <hr>
         <table class="table table-striped table-hover table-bordered align-middle shadow-sm rounded w-100 mb-4">

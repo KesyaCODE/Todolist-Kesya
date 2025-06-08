@@ -105,7 +105,7 @@
 
     <!-- Selamat Datang -->
     <h4 class="mb-0">Selamat Datang, <b>{{ $detailPegawai->nama }}</b>!</h4>
-    <p class="text-secondary mb-3">{{ $detailPegawai->jabatan }}</p>
+    <p class="text-secondary mb-3">Nama Perusahaan | {{ $detailPegawai->jabatan }}</p>
     <hr>
 
     <!-- Kartu Tugas -->
