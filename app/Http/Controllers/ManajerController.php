@@ -152,7 +152,7 @@ class ManajerController extends Controller
                     ->select('tb_todo.*',
                         'pemberi.nama as nama_pemberi',
                         'penerima.nama as nama_penerima')
-                        ->where('tugas_untuk', '==', 1)
+                        ->where('tugas_untuk', '=', 1)
                         ->get();
         // dd($todoSaya); 
         return view('manajer.tugasSaya', [
