@@ -170,11 +170,22 @@
         </div>
       </div>
 
-      <div class="text-end">
-        <button type="submit" class="btn btn-primary btn-lg px-4">
-          Tugaskan!
-        </button>
-      </div>
+<div class="text-end">
+  <button type="submit" style="
+    background-color: #80a8be;
+    color: white;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.8rem;
+    border: none;
+    border-radius: 0.35rem;
+    transition: background-color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#4e54c8'" onmouseout="this.style.backgroundColor='#6c63ff'">
+    Tugaskan!
+  </button>
+</div>
+
+
+
     </form>
   </div>
 

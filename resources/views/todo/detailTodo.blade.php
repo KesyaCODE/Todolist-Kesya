@@ -24,20 +24,22 @@
 </head>
 <body>
   <div class="container">
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" class="mb-4 text-center">
-      <ol class="breadcrumb justify-content-center">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="ps-1 mb-3">
+      <ol class="breadcrumb" style="--bs-breadcrumb-divider: '›'; font-size: 0.9rem;">
         <li class="breadcrumb-item">
-          <a href="/todo/user/login/{{ $idPengguna }}" class="btn btn-outline-primary btn-sm">Beranda</a>
+          <a href="/todo/user/login/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Beranda</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="/todo/mytodo/selesai/{{ $idPengguna }}" class="btn btn-outline-primary btn-sm">Tugas Selesai</a>
+          <a href="/todo/mytodo/selesai/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Tugas Selesai</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="/todo/mytodo/ditolak/{{ $idPengguna }}" class="btn btn-outline-primary btn-sm">Tugas Ditolak</a>
+          <a href="/todo/mytodo/ditolak/{{ $idPengguna }}" class="btn btn-outline-primary breadcrumb-link">Tugas Ditolak</a>
         </li>
       </ol>
     </nav>
+
+    <hr />
 
     <!-- Detail Card -->
     @foreach ($detailTodo as $detail)
