@@ -9,37 +9,42 @@
   <style>
     body {
       padding-top: 15px;
+      background-color: #f9f9fb;
+    }
+    /* Tombol navigasi konsisten dengan halaman daftar tugas */
+    .btn-nav {
+      width: 140px;
+      flex-shrink: 0;
+    }
+    /* Form label dan input */
+    label.col-form-label {
+      font-weight: 600;
+    }
+    /* Spasi antar form group */
+    .mb-3, .mb-4 {
+      margin-bottom: 1rem !important;
+    }
+    /* Button simpan */
+    button.btn-submit {
+      min-width: 180px;
     }
   </style>
 </head>
 <body>
   <div class="container-lg">
 
-    {{-- <div class="mb-3 d-flex flex-wrap gap-2 justify-content-center">
-      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary rounded" style="width: 180px;">
-        Beranda
-      </a>
-      <a href="/admin/todo/dataPenugasan/{{ $adminId }}" class="btn btn-outline-primary rounded" style="width: 180px;">
-        Rekap Penugasan
-      </a>
-      <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary rounded" style="width: 180px;">
-        Tugas Selesai
-      </a>
-      <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary rounded" style="width: 180px;">
-        Tugas Ditolak
-      </a>
-    </div> --}}
+    <!-- Navigasi tombol -->
     <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
-      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded btn-nav">
         Beranda
       </a>
-      <a href="/admin/todo/penugasanBaru/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+      <a href="/admin/todo/penugasanBaru/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded btn-nav">
         Penugasan Baru
       </a>
-      <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+      <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded btn-nav">
         Tugas Selesai
       </a>
-      <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
+      <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded btn-nav">
         Tugas Ditolak
       </a>
     </div>
@@ -126,7 +131,7 @@
       </div>
 
       <div class="text-end">
-        <button type="submit" class="btn btn-outline-primary rounded">
+        <button type="submit" class="btn btn-outline-primary rounded btn-submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

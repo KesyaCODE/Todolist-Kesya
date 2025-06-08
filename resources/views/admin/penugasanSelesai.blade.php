@@ -10,26 +10,82 @@
     body {
       padding-top: 20px;
       background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #343a40;
     }
+
     .btn-group {
       margin-bottom: 1rem;
       gap: 0.5rem;
       flex-wrap: wrap;
     }
+
     .btn-group .btn {
       min-width: 140px;
+    }
+
+    /* Tabel styling */
+    table {
+      border-collapse: separate;
+      border-spacing: 0 6px; /* jarak antar baris */
+      width: 100%;
+      font-size: 0.95rem;
+    }
+
+    thead th {
+      background-color: #d0e7ff; /* biru soft yang netral */
+      color: #0a3d62;
+      font-weight: 600;
+      padding: 14px 12px;
+      border-radius: 8px;
+      text-align: center;
+      border-bottom: 2px solid #0a3d62;
+      user-select: none;
+    }
+
+    tbody tr {
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+    }
+
+    tbody tr:hover {
+      background-color: #e3f2fd;
+      cursor: pointer;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #f9fbff;
+    }
+
+    tbody td {
+      padding: 12px 14px;
+      vertical-align: middle;
+      border: none;
+      color: #495057;
+    }
+
+    tbody td.text-center {
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Hilangkan garis border di tabel supaya lebih ringan */
+    table, thead, tbody, tr, th, td {
+      border: none;
+    }
+
+    /* Pesan kosong */
+    .empty-message {
+      padding: 20px 0;
+      font-style: italic;
+      color: #6c757d;
     }
   </style>
 </head>
 <body>
   <div class="container-md">
-
-    {{-- <div class="d-flex flex-wrap btn-group">
-      <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center">Beranda</a>
-      <a href="/admin/todo/penugasanBaru/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center">Penugasan Baru</a>
-      <a href="/admin/todo/penugasanSelesai/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center active" aria-current="page">Tugas Selesai</a>
-      <a href="/admin/todo/penugasanDitolak/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded text-center">Tugas Ditolak</a>
-    </div> --}}
     <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
       <a href="/todo/admin/{{ $adminId }}" class="btn btn-outline-primary btn-sm rounded" style="width: 140px;">
         Beranda
@@ -48,36 +104,35 @@
     <hr />
 
     <div class="table-responsive">
-      <table class="table table-bordered border-primary table-striped table-hover table-sm align-middle">
-        <thead class="table-primary text-center">
+      <table>
+        <thead>
           <tr>
-            <th>No.</th>
-            <th>Nama Tugas</th>
-            <th>Waktu Penugasan</th>
-            <th>Waktu Selesai</th>
-            <th>Pemberi</th>
-            <th>Pelaksana</th>
+            <th style="width: 50px;">No.</th>
+            <th style="min-width: 220px; text-align: left;">Nama Tugas</th>
+            <th style="width: 140px;">Waktu Penugasan</th>
+            <th style="width: 140px;">Waktu Selesai</th>
+            <th style="min-width: 130px; text-align: left;">Pemberi</th>
+            <th style="min-width: 130px; text-align: left;">Pelaksana</th>
           </tr>
         </thead>
         <tbody>
           @forelse ($penugasanSelesai as $ps)
             <tr>
               <td class="text-center">{{ $loop->iteration }}</td>
-              <td>{{ $ps->tugas }}</td>
+              <td style="text-align: left;">{{ $ps->tugas }}</td>
               <td class="text-center">{{ $ps->waktu_mulai }}</td>
               <td class="text-center">{{ $ps->waktu_selesai }}</td>
-              <td>{{ $ps->nama_pemberi }}</td>
-              <td>{{ $ps->nama_penerima }}</td>
+              <td style="text-align: left;">{{ $ps->nama_pemberi }}</td>
+              <td style="text-align: left;">{{ $ps->nama_penerima }}</td>
             </tr>
           @empty
             <tr>
-              <td colspan="6" class="text-center text-muted fst-italic">Belum ada tugas selesai.</td>
+              <td colspan="6" class="empty-message text-center">Belum ada tugas selesai.</td>
             </tr>
           @endforelse
         </tbody>
       </table>
     </div>
-
   </div>
 </body>
 </html>
