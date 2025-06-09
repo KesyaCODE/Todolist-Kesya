@@ -5,22 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detail To Do</title>
   <link rel="stylesheet" href="/assets/bootstrap.css" />
-  <style>
-    body {
-      padding-top: 30px;
-      background-color: #f8f9fa;
-    }
-    .breadcrumb a {
-      font-size: 0.9rem;
-    }
-    .form-label {
-      font-weight: 500;
-    }
-    .card {
-      max-width: 600px;
-      margin: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/staff/detailTodo.css" />
+
 </head>
 <body>
   <div class="container">

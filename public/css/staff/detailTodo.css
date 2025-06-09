@@ -1,0 +1,14 @@
+    body {
+      padding-top: 30px;
+      background-color: #f8f9fa;
+    }
+    .breadcrumb a {
+      font-size: 0.9rem;
+    }
+    .form-label {
+      font-weight: 500;
+    }
+    .card {
+      max-width: 600px;
+      margin: auto;
+    }

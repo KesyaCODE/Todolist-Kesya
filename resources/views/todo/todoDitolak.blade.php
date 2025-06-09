@@ -7,51 +7,7 @@
 
   <!-- Bootstrap 5 CSS via CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <style>
-    body {
-      padding-top: 2rem;
-    }
-    .breadcrumb-link {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      transition: background-color 0.2s ease;
-    }
-
-    .breadcrumb-link:hover {
-      background-color: #e2e6ea;
-      text-decoration: none;
-    }
-  .custom-table th,
-  .custom-table td {
-    vertical-align: middle;
-    padding: 0.75rem 1rem;
-  }
-
-  .custom-table thead {
-    background-color: #f1f3f5;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #495057;
-  }
-
-  .custom-table tbody tr:hover {
-    background-color: #f8f9fa;
-    transition: background-color 0.2s ease;
-  }
-
-  .custom-table td.text-danger {
-    color: #dc3545 !important;
-  }
-
-  .custom-table {
-    font-size: 0.92rem;
-    border: 1px solid #dee2e6;
-    border-radius: 0.5rem;
-    overflow: hidden;
-  }
-  </style>
+  <link rel="stylesheet" href="/css/staff/todoDitolak.css" />
 </head>
 <body>
   <div class="container-sm">
