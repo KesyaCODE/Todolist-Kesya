@@ -329,13 +329,14 @@
     </style>
 </head>
 <body>
-
-    <div class="nav-buttons-wrapper">
+    {{-- <div class="container-sm py-4"> --}}
+    <div class="main-content-container">
+                <div class="nav-buttons-wrapper ">
         <div class="nav-buttons">
             <a class="btn btn-outline-primary" href="/todo/manajer/{{ $adminId }}">
                 <i class="fas fa-home"></i> Beranda
             </a>
-            <a class="btn btn-outline-primary" href="/manajer/todo/penugasanBaru/{{ $adminId }}">
+            {{-- <a class="btn btn-outline-primary" href="/manajer/todo/penugasanBaru/{{ $adminId }}">
                 <i class="fas fa-plus-circle"></i> Penugasan Baru
             </a>
             <a class="btn btn-outline-primary" href="/manajer/todo/penugasanSelesai/{{ $adminId }}">
@@ -343,11 +344,10 @@
             </a>
             <a class="btn btn-outline-primary" href="/manajer/todo/penugasanDitolak/{{ $adminId }}">
                 <i class="fas fa-times-circle"></i> Tugas Ditolak
-            </a> 
+            </a>  --}}
         </div>
     </div>
 
-    <div class="main-content-container">
         <div class="card">
             <div class="card-header">
                 <i class="fas fa-edit me-2"></i> Ubah Data Tugas
@@ -406,5 +406,6 @@
             </div>
         </div>
     </div>
+    {{-- </div> --}}
 </body>
 </html>

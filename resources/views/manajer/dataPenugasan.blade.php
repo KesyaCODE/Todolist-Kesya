@@ -268,7 +268,7 @@
     </style>
 </head>
 <body>
-    <div class="container py-4">
+    <div class="container-sm py-4">
         <div class="header-section">
             <h1><i class="fas fa-clipboard-list me-3"></i>Dashboard Penugasan Manajer</h1>
             <div class="nav-buttons d-flex flex-wrap gap-2">

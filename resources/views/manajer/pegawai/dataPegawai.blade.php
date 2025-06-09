@@ -245,14 +245,15 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-sm">
         <div class="header-section">
             <h1><i class="fas fa-users-cog me-3"></i>Data Pegawai</h1>
             <div class="nav-buttons d-flex flex-wrap gap-2">
                 <a class="btn btn-outline-primary" href="/todo/manajer/{{ $idManajer }}"><i class="fas fa-home"></i> Beranda</a>
-                <a class="btn btn-outline-primary" href="/manajer/todo/penugasanBaru/{{ $idManajer }}"><i class="fas fa-plus-circle"></i> Penugasan Baru</a>
-                <a class="btn btn-outline-primary" href="/manajer/todo/penugasanSelesai/{{ $idManajer }}"><i class="fas fa-check-circle"></i> Tugas Selesai</a>
-                <a class="btn btn-outline-primary" href="/manajer/todo/penugasanDitolak/{{ $idManajer }}"><i class="fas fa-times-circle"></i> Tugas Ditolak</a> 
+                <a class="btn btn-outline-primary" href="/manajer/todo/dataPenugasan/{{ $idManajer }}"><i class="fas fa-home"></i> Data Penugasan</a>
+                {{-- <a class="btn btn-outline-primary" href="/manajer/todo/penugasanBaru/{{ $idManajer }}"><i class="fas fa-plus-circle"></i> Penugasan Baru</a> --}}
+                {{-- <a class="btn btn-outline-primary" href="/manajer/todo/penugasanSelesai/{{ $idManajer }}"><i class="fas fa-check-circle"></i> Tugas Selesai</a> --}}
+                {{-- <a class="btn btn-outline-primary" href="/manajer/todo/penugasanDitolak/{{ $idManajer }}"><i class="fas fa-times-circle"></i> Tugas Ditolak</a>  --}}
                 <a class="btn btn-primary" href="/manajer/todo/dataPegawai/{{ $idManajer }}"><i class="fas fa-users"></i> Data Pegawai</a>
             </div>
         </div>

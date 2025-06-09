@@ -244,15 +244,15 @@
                 <a class="btn btn-outline-primary" href="/todo/manajer/{{ $adminId }}">
                     <i class="fas fa-home"></i> Beranda
                 </a>
-                <a class="btn btn-outline-primary" href="/manajer/todo/penugasanBaru/{{ $adminId }}">
+                {{-- <a class="btn btn-outline-primary" href="/manajer/todo/penugasanBaru/{{ $adminId }}">
                     <i class="fas fa-plus-circle"></i> Penugasan Baru
-                </a>
-                <a class="btn btn-outline-primary" href="/manajer/todo/penugasanSelesai/{{ $adminId }}">
+                </a> --}}
+                {{-- <a class="btn btn-outline-primary" href="/manajer/todo/penugasanSelesai/{{ $adminId }}">
                     <i class="fas fa-check-circle"></i> Tugas Selesai
-                </a>
-                <a class="btn btn-outline-primary" href="/manajer/todo/penugasanDitolak/{{ $adminId }}">
+                </a> --}}
+                {{-- <a class="btn btn-outline-primary" href="/manajer/todo/penugasanDitolak/{{ $adminId }}">
                     <i class="fas fa-times-circle"></i> Tugas Ditolak
-                </a> 
+                </a>  --}}
             </div>
         </div>
 

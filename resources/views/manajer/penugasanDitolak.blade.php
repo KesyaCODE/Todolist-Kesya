@@ -238,7 +238,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-sm">
         <div class="header-section">
             <h1><i class="fas fa-times-circle me-3"></i>Penugasan Ditolak</h1>
             <div class="nav-buttons d-flex flex-wrap gap-2">
