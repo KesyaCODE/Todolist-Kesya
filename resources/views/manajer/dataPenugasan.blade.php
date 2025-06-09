@@ -333,7 +333,7 @@
                                         <a href="/manajer/todo/ubahPenugasan/{{ $dt->id }}/{{ $adminId }}" class="btn btn-outline-primary" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="/manajer/todo/hapusPenugasan/{{ $dt->id }}" class="btn btn-outline-danger" title="Hapus" onclick="return confirm('Yakin ingin menghapus tugas ini?')" data-bs-toggle="tooltip" data-bs-placement="top">
+                                        <a href="/manajer/todo/hapusPenugasan/{{ $dt->id }}/{{ $adminId }}" class="btn btn-outline-danger" title="Hapus" onclick="return confirm('Yakin ingin menghapus tugas ini?')" data-bs-toggle="tooltip" data-bs-placement="top">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>

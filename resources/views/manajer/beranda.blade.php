@@ -191,6 +191,7 @@
             .header-container {
                 margin-bottom: 1.5rem;
                 padding-top: 0;
+                text-align: left;
             }
             .header {
                 font-size: 1.8rem;
@@ -255,7 +256,8 @@
                     <p>Analisis dan statistik dari aktivitas penugasan.</p>
                 </div>
             </a>
-
+        </div>
+        <div class="block-menu">
             <a href="/manajer/todo/dataPegawai/{{ $detailManajer->id }}" class="menu-block">
                 <i class="fas fa-users menu-icon"></i>
                 <div class="menu-content">
@@ -271,7 +273,6 @@
                     <p>Lihat tugas yang ditugaskan langsung kepada Anda.</p>
                 </div>
             </a>
-
         </div>
     </div>
 

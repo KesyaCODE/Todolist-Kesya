@@ -145,6 +145,30 @@ class ManajerController extends Controller
         ]);
     }
 
+    public function hapusPenugasan($id, $adminId) {
+        //hapus data
+        DB::table('tb_hasiltugas')
+            ->where('id', $id)
+            ->delete();
+
+        DB::table('tb_todo')
+            ->where('id', $id)
+            ->delete();
+        
+        //ambil semua data untuk ditampilkan
+        $todo = DB::table('tb_todo')
+                ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
+                ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
+                ->select('tb_todo.*',
+                    'pemberi.nama as nama_pemberi',
+                    'penerima.nama as nama_penerima')
+                ->get();
+        return view('manajer.dataPenugasan', [
+                'dataTodo' => $todo,
+                'adminId' => $adminId // id admin yang login
+            ]);
+    }
+
     public function tugasSaya($id) {
         $todoSaya = DB::table('tb_todo')
                     ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')

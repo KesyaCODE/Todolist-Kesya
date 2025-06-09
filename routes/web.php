@@ -46,6 +46,7 @@ Route::get('/manajer/todo/simpanPenugasanBaru', [ManajerController::class, 'simp
 Route::get('/manajer/todo/penugasanSelesai/{id}', [ManajerController::class, 'penugasanSelesai']);
 Route::get('/manajer/todo/penugasanDitolak/{id}', [ManajerController::class, 'penugasanDitolak']);
 Route::get('/manajer/todo/ubahPenugasan/{id}/{adminId}', [ManajerController::class, 'ubahPenugasan']);
+Route::get('manajer/todo/hapusPenugasan/{id}/{adminId}', [ManajerController::class, 'hapusPenugasan']);
 Route::get('/manajer/todo/simpanPerubahanPenugasan/{id}/{adminId}', [ManajerController::class, 'simpanPembaruanTugas']);
 Route::get('/manajer/todo/dataPegawai/{idManajer}', [ManajerController::class, 'dataPegawai']);
 
