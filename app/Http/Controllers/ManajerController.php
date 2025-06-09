@@ -111,10 +111,6 @@ class ManajerController extends Controller
     }
 
     public function ubahPenugasan($id, $adminId) {
-        // $detailTodo = DB::table('tb_todo')
-        //             ->where('id', $id)
-        //             ->get();
-
         $detailTodo = DB::table('tb_todo')
                     ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
                     ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
@@ -178,7 +174,7 @@ class ManajerController extends Controller
                         'penerima.nama as nama_penerima')
                         ->where('tugas_untuk', '=', $id)
                         ->get();
-        dd($todoSaya); 
+        // dd($todoSaya); 
         return view('manajer.tugasSaya', [
             'tugasSaya' => $todoSaya,
             'adminId' => $id // id admin yang login
