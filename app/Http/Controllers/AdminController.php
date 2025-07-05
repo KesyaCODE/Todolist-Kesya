@@ -151,13 +151,13 @@ class AdminController extends Controller
         ->delete();
 
         //ambil data 
-        // $todo = DB::table('tb_todo')
-        //         ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
-        //         ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
-        //         ->select('tb_todo.*',
-        //             'pemberi.nama as nama_pemberi',
-        //             'penerima.nama as nama_penerima')
-        //         ->get();
+        $todo = DB::table('tb_todo')
+                ->join('tb_pegawai as pemberi', 'tb_todo.tugas_dari', '=', 'pemberi.id')
+                ->join('tb_pegawai as penerima', 'tb_todo.tugas_untuk', '=', 'penerima.id')
+                ->select('tb_todo.*',
+                    'pemberi.nama as nama_pemberi',
+                    'penerima.nama as nama_penerima')
+                ->get();
         
         // kembali ke view disertai parameter sebelumnya
         // return ('admin.dataPenugasan', [

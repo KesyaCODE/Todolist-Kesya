@@ -23,7 +23,7 @@
     <div class="main-content-wrapper">
         <div class="header-container">
             <h1 class="header">Selamat Datang, {{ $detailManajer->nama }}!</h1>
-            <p class="subheader">{{ $detailManajer->jabatan }} | Nama Perusahaan</p>
+            <p class="subheader">{{ $detailManajer->jabatan }} | PT.Velovelo</p>
         </div>
 
         <div class="block-menu">

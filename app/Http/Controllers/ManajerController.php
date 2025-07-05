@@ -143,7 +143,7 @@ class ManajerController extends Controller
 
     public function hapusPenugasan($id, $adminId) {
         //hapus data
-        DB::table('tb_hasiltugas')
+        DB::table('tb_todo')
             ->where('id', $id)
             ->delete();
 

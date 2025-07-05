@@ -123,7 +123,7 @@
     </nav>
 
     <p class="welcome-text">Selamat Datang, <span>{{ $detailPegawai->nama }}</span>!</p>
-    <p class="job-title">Nama Perusahaan | {{ $detailPegawai->jabatan }}</p>
+    <p class="job-title">PT.Velovelo | {{ $detailPegawai->jabatan }}</p>
     <hr />
 
     <section aria-label="Menu admin">
